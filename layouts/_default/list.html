@@ -2,22 +2,22 @@
 <div class="max-w-4xl mx-auto px-4 py-12">
     <h1 class="text-4xl font-bold mb-4 text-center text-gray-800">{{ .Title }}</h1>
     {{ with .Description }}
-    <p class="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">{{ . }}</p>
+    <p class="text-xl text-gray-600 text-center mb-10 max-w-2xl mx-auto">{{ . }}</p>
     {{ end }}
 
-    <div class="mb-12 prose max-w-3xl mx-auto">
+    <div class="mb-12 prose prose-lg max-w-3xl mx-auto">
         {{ .Content }}
     </div>
 
     {{ if eq .Section "projects" }}
-        <div class="grid grid-cols-1 gap-6">
+        <div class="space-y-8">
             {{ range .Pages }}
-            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6 border border-gray-100">
-                <h3 class="text-2xl font-bold mb-3 text-gray-800">{{ .Title }}</h3>
-                <p class="text-gray-600 mb-4">{{ .Description }}</p>
+            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 p-8 border border-gray-100">
+                <h3 class="text-2xl font-bold mb-2 text-gray-800">{{ .Title }}</h3>
+                <p class="text-gray-600 mb-5 text-lg">{{ .Description }}</p>
                 
                 {{ with .Params.tech_stack }}
-                <div class="mb-4">
+                <div class="mb-6">
                     <div class="flex flex-wrap gap-2">
                         {{ range . }}
                         <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">{{ . }}</span>
@@ -26,7 +26,14 @@
                 </div>
                 {{ end }}
                 
-                <a href="{{ .RelPermalink }}" class="inline-block mt-2 px-6 py-2 bg-primary text-white rounded-lg hover:bg-blue-600 transition-colors duration-200 text-center font-medium">View Project</a>
+                <div class="flex justify-end">
+                    <a href="{{ .RelPermalink }}" class="inline-flex items-center px-5 py-2 bg-primary text-white rounded-md hover:bg-blue-600 transition-colors duration-200 text-center font-medium">
+                        <span>View Project</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
+                </div>
             </div>
             {{ end }}
         </div>
@@ -40,7 +47,12 @@
                         <a href="{{ .RelPermalink }}" class="text-primary hover:text-primary-dark">{{ .Title }}</a>
                     </h3>
                     <p class="text-gray-600 mb-4">{{ .Summary }}</p>
-                    <a href="{{ .RelPermalink }}" class="text-primary hover:text-primary-dark font-medium">Read More →</a>
+                    <a href="{{ .RelPermalink }}" class="text-primary hover:text-primary-dark font-medium flex items-center">
+                        <span>Read More</span> 
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
                 </div>
             </div>
             {{ end }}
@@ -49,15 +61,15 @@
         {{ if gt $paginator.TotalPages 1 }}
         <div class="mt-12 flex justify-between">
             {{ if $paginator.HasPrev }}
-            <a href="{{ $paginator.Prev.URL }}" class="bg-primary text-white px-6 py-2 rounded-lg shadow-md hover:shadow-lg transition duration-200">← Previous</a>
+            <a href="{{ $paginator.Prev.URL }}" class="bg-primary text-white px-6 py-2 rounded-md shadow-md hover:shadow-lg transition duration-200">← Previous</a>
             {{ else }}
-            <button class="bg-gray-300 text-gray-600 px-6 py-2 rounded-lg cursor-not-allowed">← Previous</button>
+            <button class="bg-gray-300 text-gray-600 px-6 py-2 rounded-md cursor-not-allowed">← Previous</button>
             {{ end }}
 
             {{ if $paginator.HasNext }}
-            <a href="{{ $paginator.Next.URL }}" class="bg-primary text-white px-6 py-2 rounded-lg shadow-md hover:shadow-lg transition duration-200">Next →</a>
+            <a href="{{ $paginator.Next.URL }}" class="bg-primary text-white px-6 py-2 rounded-md shadow-md hover:shadow-lg transition duration-200">Next →</a>
             {{ else }}
-            <button class="bg-gray-300 text-gray-600 px-6 py-2 rounded-lg cursor-not-allowed">Next →</button>
+            <button class="bg-gray-300 text-gray-600 px-6 py-2 rounded-md cursor-not-allowed">Next →</button>
             {{ end }}
         </div>
         {{ end }}
