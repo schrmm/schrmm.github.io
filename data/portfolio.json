@@ -37,6 +37,21 @@
       "degree": "MS in Computer Science",
       "institution": "Stanford University",
       "year": "2020"
+    },
+    {
+      "degree": "BS in Computer Engineering",
+      "institution": "MIT",
+      "year": "2018"
+    },
+    {
+      "degree": "Online Certification in Cloud Architecture",
+      "institution": "AWS Academy",
+      "year": "2021"
+    },
+    {
+      "degree": "Deep Learning Specialization",
+      "institution": "Coursera",
+      "year": "2022"
     }
   ],
   "work_experience": [
