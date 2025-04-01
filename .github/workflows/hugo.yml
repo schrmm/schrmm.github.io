@@ -26,13 +26,11 @@ jobs:
         run: |
           hugo --minify
           echo "Checking for generated files:"
-          ls -la
-          echo "Contents of docs directory (if it exists):"
-          ls -la docs/ || echo "docs directory not found"
+          find public -type f | sort
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs
+          publish_dir: ./public
           publish_branch: gh-pages
