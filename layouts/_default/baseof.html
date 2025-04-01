@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<<<<<<< HEAD
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
@@ -66,5 +67,15 @@
     
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+=======
+    {{ partial "head.html" . }}
+</head>
+<body class="min-h-screen flex flex-col">
+    {{ partial "header.html" . }}
+    <main class="flex-grow">
+        {{ block "main" . }}{{ end }}
+    </main>
+    {{ partial "footer.html" . }}
+>>>>>>> temp-branch
 </body>
 </html>
