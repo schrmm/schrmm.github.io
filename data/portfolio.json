@@ -18,13 +18,13 @@
     {
       "name": "Portfolio Generator",
       "description": "Automated portfolio and resume generation tool using Hugo",
-      "url": "/projects/portfolio-generator/",
+      "url": "/projects/portfolio-generator",
       "featured": true
     },
     {
       "name": "Data Visualization Dashboard",
       "description": "Interactive dashboard for analyzing complex datasets",
-      "url": "/projects/data-viz-dashboard/",
+      "url": "/projects/data-viz-dashboard",
       "featured": true
     }
   ],
