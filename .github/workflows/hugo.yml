@@ -23,12 +23,14 @@ jobs:
           extended: true
 
       - name: Build
-        run: hugo --minify
+        run: |
+          hugo --minify
+          ls -la public/
+          ls -la docs/
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs
-          # Create gh-pages branch for the content instead of using main
+          publish_dir: ./public  # Changed from docs to public (Hugo default)
           publish_branch: gh-pages

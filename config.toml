@@ -3,14 +3,14 @@ languageCode = "en-us"
 title = "Portfolio"
 publishDir = "docs"
 enableRobotsTXT = true
-disableKinds = ["taxonomy"] # Fixed deprecated "taxonomyterm"
+disableKinds = []  # Don't disable any kinds for now
 
 # Site parameters
 [params]
   author = "Jane Doe"
   description = "Personal portfolio site powered by Hugo"
   
-  # Moved social links under params
+  # Social links under params
   [params.social]
     github = "https://github.com/schrmm"
     linkedin = "https://linkedin.com/in/janedoe"
