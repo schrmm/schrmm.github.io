@@ -2,7 +2,6 @@
 title: "Data Visualization Dashboard"
 description: "Interactive dashboard for analyzing complex datasets"
 tech_stack: ["React", "D3.js", "Python", "FastAPI", "PostgreSQL"]
-screenshots: ["/images/projects/data-viz/dashboard.svg", "/images/projects/data-viz/charts.svg"]
 ---
 
 ## Overview

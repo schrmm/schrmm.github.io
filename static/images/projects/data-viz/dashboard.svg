@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="1200" height="800" version="1.1" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1200" height="800" fill="#f3f4f6"/>
-  <g transform="translate(400,350)">
-    <text x="0" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="48" text-anchor="middle" fill="#3b82f6">📊</text>
-    <text x="0" y="60" font-family="system-ui, -apple-system, sans-serif" font-size="24" text-anchor="middle" fill="#1f2937">Data Visualization Dashboard</text>
-    <text x="0" y="100" font-family="system-ui, -apple-system, sans-serif" font-size="16" text-anchor="middle" fill="#6b7280">Placeholder - Replace with actual screenshot</text>
-  </g>
-</svg> 

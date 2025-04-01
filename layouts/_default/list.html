@@ -1,5 +1,5 @@
 {{ define "main" }}
-<div class="max-w-6xl mx-auto px-4 py-12">
+<div class="max-w-4xl mx-auto px-4 py-12">
     <h1 class="text-4xl font-bold mb-4 text-center text-gray-800">{{ .Title }}</h1>
     {{ with .Description }}
     <p class="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">{{ . }}</p>
@@ -10,39 +10,29 @@
     </div>
 
     {{ if eq .Section "projects" }}
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 gap-6">
             {{ range .Pages }}
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full border border-gray-100">
-                {{ with index .Params.screenshots 0 }}
-                <div class="h-48 overflow-hidden bg-gray-100">
-                    <img src="{{ . }}" alt="{{ $.Title }}" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500">
+            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6 border border-gray-100">
+                <h3 class="text-2xl font-bold mb-3 text-gray-800">{{ .Title }}</h3>
+                <p class="text-gray-600 mb-4">{{ .Description }}</p>
+                
+                {{ with .Params.tech_stack }}
+                <div class="mb-4">
+                    <div class="flex flex-wrap gap-2">
+                        {{ range . }}
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">{{ . }}</span>
+                        {{ end }}
+                    </div>
                 </div>
                 {{ end }}
-                <div class="p-6 flex flex-col flex-grow">
-                    <h3 class="text-2xl font-bold mb-2 text-gray-800">{{ .Title }}</h3>
-                    <p class="text-gray-600 mb-4 flex-grow">{{ .Description }}</p>
-                    
-                    {{ with .Params.tech_stack }}
-                    <div class="mb-4">
-                        <div class="flex flex-wrap gap-2">
-                            {{ range first 4 . }}
-                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">{{ . }}</span>
-                            {{ end }}
-                            {{ if gt (len .) 4 }}
-                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">+{{ sub (len .) 4 }}</span>
-                            {{ end }}
-                        </div>
-                    </div>
-                    {{ end }}
-                    
-                    <a href="{{ .RelPermalink }}" class="inline-block mt-2 px-6 py-2 bg-primary text-white rounded-lg hover:bg-blue-600 transition-colors duration-200 text-center font-medium">View Project</a>
-                </div>
+                
+                <a href="{{ .RelPermalink }}" class="inline-block mt-2 px-6 py-2 bg-primary text-white rounded-lg hover:bg-blue-600 transition-colors duration-200 text-center font-medium">View Project</a>
             </div>
             {{ end }}
         </div>
     {{ else }}
         {{ $paginator := .Paginate .Pages.ByDate.Reverse }}
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             {{ range $paginator.Pages }}
             <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
                 <div class="p-6">
