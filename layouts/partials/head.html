@@ -1,0 +1,19 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+<meta name="description" content="{{ .Site.Params.description }}">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    primary: '#3b82f6',
+                    secondary: '#10b981',
+                    dark: '#1f2937',
+                }
+            }
+        }
+    }
+</script>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">

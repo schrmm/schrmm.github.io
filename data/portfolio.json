@@ -1,0 +1,54 @@
+{
+  "profile": {
+    "name": "Jane Doe",
+    "title": "Software Developer",
+    "email": "jane.doe@example.com",
+    "location": "San Francisco, CA",
+    "bio": "Software engineer passionate about web technologies and open source."
+  },
+  "skills": [
+    "Python",
+    "JavaScript",
+    "Docker",
+    "Machine Learning",
+    "Data Analysis",
+    "Web Development"
+  ],
+  "projects": [
+    {
+      "name": "Portfolio Generator",
+      "description": "Automated portfolio and resume generation tool using Hugo",
+      "url": "https://github.com/schrmm/portfolio-generator",
+      "featured": true
+    },
+    {
+      "name": "Data Visualization Dashboard",
+      "description": "Interactive dashboard for analyzing complex datasets",
+      "url": "https://github.com/schrmm/data-viz",
+      "featured": true
+    }
+  ],
+  "social_links": {
+    "GitHub": "https://github.com/schrmm",
+    "LinkedIn": "https://linkedin.com/in/janedoe"
+  },
+  "education": [
+    {
+      "degree": "MS in Computer Science",
+      "institution": "Stanford University",
+      "year": "2020"
+    }
+  ],
+  "work_experience": [
+    {
+      "title": "Senior Software Engineer",
+      "company": "Tech Innovations Inc.",
+      "dates": "2020-Present",
+      "responsibilities": [
+        "Lead development of cloud-native applications",
+        "Mentor junior engineers",
+        "Design scalable microservices architecture"
+      ]
+    }
+  ]
+}
