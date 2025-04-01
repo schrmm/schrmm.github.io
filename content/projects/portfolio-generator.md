@@ -1,7 +1,6 @@
 ---
 title: "Portfolio Generator"
 description: "Automated portfolio and resume generation tool using Hugo"
-github_url: "https://github.com/schrmm/portfolio-generator"
 tech_stack: ["Hugo", "Go", "Tailwind CSS", "JavaScript"]
 screenshots: ["/images/projects/portfolio-generator/dashboard.svg", "/images/projects/portfolio-generator/preview.svg"]
 ---

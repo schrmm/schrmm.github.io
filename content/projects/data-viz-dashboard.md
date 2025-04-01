@@ -1,7 +1,6 @@
 ---
 title: "Data Visualization Dashboard"
 description: "Interactive dashboard for analyzing complex datasets"
-github_url: "https://github.com/schrmm/data-viz"
 tech_stack: ["React", "D3.js", "Python", "FastAPI", "PostgreSQL"]
 screenshots: ["/images/projects/data-viz/dashboard.svg", "/images/projects/data-viz/charts.svg"]
 ---
