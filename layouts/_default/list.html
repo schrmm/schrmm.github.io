@@ -10,16 +10,13 @@
     </div>
 
     {{ if eq .Section "projects" }}
-        {{ $portfolio := .Site.Data.portfolio }}
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {{ range $portfolio.projects }}
+            {{ range .Pages }}
             <div class="bg-white rounded-lg shadow-md overflow-hidden">
                 <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2">{{ .name }}</h3>
-                    <p class="text-gray-600 mb-4">{{ .description }}</p>
-                    {{ if .url }}
-                    <a href="{{ .url }}" class="text-primary hover:text-primary-dark">View Project →</a>
-                    {{ end }}
+                    <h3 class="text-xl font-semibold mb-2">{{ .Title }}</h3>
+                    <p class="text-gray-600 mb-4">{{ .Description }}</p>
+                    <a href="{{ .RelPermalink }}" class="text-primary hover:text-primary-dark">View Project →</a>
                 </div>
             </div>
             {{ end }}
