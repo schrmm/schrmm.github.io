@@ -3,12 +3,17 @@ languageCode = "en-us"
 title = "Portfolio"
 publishDir = "docs"
 enableRobotsTXT = true
-disableKinds = ["taxonomy", "taxonomyTerm"]
+disableKinds = ["taxonomy"] # Fixed deprecated "taxonomyterm"
 
 # Site parameters
 [params]
   author = "Jane Doe"
   description = "Personal portfolio site powered by Hugo"
+  
+  # Moved social links under params
+  [params.social]
+    github = "https://github.com/schrmm"
+    linkedin = "https://linkedin.com/in/janedoe"
 
 # Menu items
 [menu]
@@ -27,8 +32,3 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
     name = "Resume"
     url = "/resume/"
     weight = 3
-
-# Social media links
-[social]
-  github = "https://github.com/schrmm"
-  linkedin = "https://linkedin.com/in/janedoe"
