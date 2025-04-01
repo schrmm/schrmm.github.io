@@ -1,8 +1,9 @@
 ---
 title: "Projects"
-date: 2025-04-01T09:00:00-08:00
+description: "A showcase of my recent work and projects"
+date: 2024-04-01T09:00:00-08:00
 draft: false
-url: "/projects/"
+layout: list
 ---
 
-A collection of my recent work and projects.
+Welcome to my projects page. Here you'll find a collection of my recent work and notable projects. Each project demonstrates different aspects of my skills and expertise in software development.
