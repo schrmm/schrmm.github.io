@@ -1,7 +1,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
-<meta name="description" content="{{ .Site.Params.description }}">
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
     tailwind.config = {
@@ -9,11 +12,40 @@
             extend: {
                 colors: {
                     primary: '#3b82f6',
+                    'primary-dark': '#2563eb',
                     secondary: '#10b981',
+                    'secondary-dark': '#059669',
                     dark: '#1f2937',
-                }
+                },
+                fontFamily: {
+                    sans: ['Inter', 'sans-serif'],
+                },
+                typography: {
+                    DEFAULT: {
+                        css: {
+                            maxWidth: '65ch',
+                            color: '#374151',
+                            strong: {
+                                color: '#111827',
+                            },
+                        },
+                    },
+                },
             }
         }
     }
 </script>
+<style>
+    body {
+        font-family: 'Inter', sans-serif;
+    }
+    .prose code {
+        border-radius: 0.25rem;
+        padding: 0.125rem 0.25rem;
+        background-color: #f3f4f6;
+    }
+    .prose pre {
+        border-radius: 0.5rem;
+    }
+</style>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
