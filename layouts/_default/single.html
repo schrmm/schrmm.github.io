@@ -1,24 +1,38 @@
 {{ define "main" }}
-<section class="py-12 bg-gradient-to-r from-blue-500 to-indigo-600 text-white">
-    <div class="max-w-6xl mx-auto px-4 text-center">
-        <h1 class="text-4xl font-bold mb-2">{{ .Title }}</h1>
+<section class="py-5 bg-primary-gradient text-white">
+    <div class="container text-center py-3">
+        <h1 class="display-5 fw-bold">{{ .Title }}</h1>
         {{ with .Description }}
-        <p class="text-xl max-w-3xl mx-auto">{{ . }}</p>
+        <p class="lead mx-auto">{{ . }}</p>
         {{ end }}
     </div>
 </section>
 
-<section class="py-16 bg-white">
-    <div class="max-w-4xl mx-auto px-4">
-        <article class="prose max-w-none">
-            {{ .Content }}
-        </article>
-        
-        {{ if eq .Section "projects" }}
-        <div class="mt-12 py-6 border-t border-gray-200">
-            <a href="/projects/" class="text-blue-600 hover:underline">← Back to Projects</a>
+<article class="py-5 bg-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="mb-3">
+                    <span class="text-muted">{{ .Date.Format "January 2, 2006" }}</span>
+                </div>
+                
+                <div class="mt-4">
+                    {{ .Content }}
+                </div>
+                
+                {{ if .Params.tags }}
+                <div class="mt-5">
+                    {{ range .Params.tags }}
+                    <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="badge bg-primary text-decoration-none me-1">{{ . }}</a>
+                    {{ end }}
+                </div>
+                {{ end }}
+                
+                <div class="mt-5 pt-3 border-top">
+                    <a href="{{ .Parent.RelPermalink }}" class="btn btn-outline-primary">← Back to {{ .Parent.Title }}</a>
+                </div>
+            </div>
         </div>
-        {{ end }}
     </div>
-</section>
+</article>
 {{ end }}
