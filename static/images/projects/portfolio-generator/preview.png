@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: system-ui, -apple-system, sans-serif;
+            background: #f3f4f6;
+        }
+        .placeholder {
+            background: white;
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 800px;
+        }
+        h1 {
+            color: #1f2937;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #6b7280;
+            margin-bottom: 30px;
+        }
+        .icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #3b82f6;
+        }
+    </style>
+</head>
+<body>
+    <div class="placeholder">
+        <div class="icon">🖼️</div>
+        <h1>Portfolio Generator Dashboard</h1>
+        <p>Placeholder image - Replace with actual screenshot</p>
+        <p>Recommended size: 1200x800 pixels</p>
+    </div>
+</body>
+</html> 
