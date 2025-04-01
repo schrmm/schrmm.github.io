@@ -1,0 +1,75 @@
+{{ define "main" }}
+{{ $portfolio := index .Site.Data "portfolio" }}
+
+<section class="py-12 bg-gradient-to-r from-blue-500 to-indigo-600 text-white">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+        <h1 class="text-4xl font-bold mb-2">{{ .Title }}</h1>
+        {{ with .Description }}
+        <p class="text-xl max-w-3xl mx-auto">{{ . }}</p>
+        {{ end }}
+    </div>
+</section>
+
+<section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+        <!-- User content from the page -->
+        <div class="prose max-w-none mb-12">
+            {{ .Content }}
+        </div>
+        
+        <!-- Resume -->
+        <div class="bg-white p-8 rounded-lg shadow-md">
+            <!-- Header -->
+            <header class="border-b border-gray-200 pb-6 mb-6">
+                <h2 class="text-3xl font-bold text-gray-800">{{ $portfolio.profile.name }}</h2>
+                <div class="mt-2 text-gray-600">
+                    {{ $portfolio.profile.email }} | {{ $portfolio.profile.location }}
+                </div>
+            </header>
+
+            <!-- Education Section -->
+            <section class="mb-8">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4 border-b border-gray-200 pb-2">Education</h3>
+                {{ range $portfolio.education }}
+                <div class="mb-4">
+                    <div class="flex justify-between items-start">
+                        <h4 class="text-xl font-semibold">{{ .degree }}</h4>
+                        <span class="text-gray-600">{{ .year }}</span>
+                    </div>
+                    <div class="text-gray-700">{{ .institution }}</div>
+                </div>
+                {{ end }}
+            </section>
+
+            <!-- Work Experience Section -->
+            <section class="mb-8">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4 border-b border-gray-200 pb-2">Work Experience</h3>
+                {{ range $portfolio.work_experience }}
+                <div class="mb-6">
+                    <div class="flex justify-between items-start">
+                        <h4 class="text-xl font-semibold">{{ .title }}</h4>
+                        <span class="text-gray-600">{{ .dates }}</span>
+                    </div>
+                    <div class="text-gray-700 mb-2">{{ .company }}</div>
+                    <ul class="list-disc pl-5 text-gray-600">
+                    {{ range .responsibilities }}
+                        <li class="mb-1">{{ . }}</li>
+                    {{ end }}
+                    </ul>
+                </div>
+                {{ end }}
+            </section>
+
+            <!-- Skills Section -->
+            <section>
+                <h3 class="text-2xl font-bold text-gray-800 mb-4 border-b border-gray-200 pb-2">Skills</h3>
+                <div class="flex flex-wrap gap-2">
+                {{ range $portfolio.skills }}
+                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">{{ . }}</span>
+                {{ end }}
+                </div>
+            </section>
+        </div>
+    </div>
+</section>
+{{ end }}

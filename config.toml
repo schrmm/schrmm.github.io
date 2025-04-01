@@ -1,6 +1,7 @@
 baseURL = "https://schrmm.github.io/"
 languageCode = "en-us"
 title = "Portfolio"
+enableRobotsTXT = true
 
 # Site parameters
 [params]

@@ -1,18 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {{ partial "head.html" . }}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 font-sans">
-    <!-- Navigation -->
-    {{ partial "header.html" . }}
-    
-    <!-- Main Content -->
+<body class="bg-gray-50">
+    <header class="bg-white shadow-md">
+        <nav class="max-w-6xl mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="/" class="text-xl font-bold text-blue-600">{{ .Site.Params.author }}</a>
+                <div class="flex space-x-6">
+                    {{ range .Site.Menus.main }}
+                    <a href="{{ .URL }}" class="text-gray-700 hover:text-blue-600 {{ if eq $.RelPermalink .URL }}font-semibold{{ end }}">{{ .Name }}</a>
+                    {{ end }}
+                </div>
+            </div>
+        </nav>
+    </header>
+
     <main>
         {{ block "main" . }}{{ end }}
     </main>
-    
-    <!-- Footer -->
-    {{ partial "footer.html" . }}
+
+    <footer class="py-8 bg-gray-800 text-gray-300">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p>© {{ now.Format "2006" }} {{ .Site.Params.author }} - All Rights Reserved</p>
+            <div class="mt-4 flex justify-center space-x-4">
+                {{ with .Site.Params.social.github }}
+                <a href="{{ . }}" class="text-gray-300 hover:text-white">GitHub</a>
+                {{ end }}
+                {{ with .Site.Params.social.linkedin }}
+                <a href="{{ . }}" class="text-gray-300 hover:text-white">LinkedIn</a>
+                {{ end }}
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

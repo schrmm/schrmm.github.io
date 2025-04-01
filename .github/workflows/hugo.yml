@@ -12,6 +12,9 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v3
+        with:
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
@@ -27,15 +30,6 @@ jobs:
           # Debug: List the public directory contents
           echo "Public directory contents:"
           find public -type f | sort
-          
-          # Make sure the projects and resume directories exist
-          mkdir -p public/projects
-          mkdir -p public/resume
-          
-          # Verify the directories and index files
-          ls -la public
-          ls -la public/projects
-          ls -la public/resume
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

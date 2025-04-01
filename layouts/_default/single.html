@@ -1,8 +1,24 @@
 {{ define "main" }}
-<div class="max-w-6xl mx-auto px-4 py-12">
-    <h1 class="text-3xl font-bold mb-8">{{ .Title }}</h1>
-    <div class="prose max-w-none">
-        {{ .Content }}
+<section class="py-12 bg-gradient-to-r from-blue-500 to-indigo-600 text-white">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+        <h1 class="text-4xl font-bold mb-2">{{ .Title }}</h1>
+        {{ with .Description }}
+        <p class="text-xl max-w-3xl mx-auto">{{ . }}</p>
+        {{ end }}
     </div>
-</div>
+</section>
+
+<section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+        <article class="prose max-w-none">
+            {{ .Content }}
+        </article>
+        
+        {{ if eq .Section "projects" }}
+        <div class="mt-12 py-6 border-t border-gray-200">
+            <a href="/projects/" class="text-blue-600 hover:underline">← Back to Projects</a>
+        </div>
+        {{ end }}
+    </div>
+</section>
 {{ end }}
