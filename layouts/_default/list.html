@@ -1,84 +1,60 @@
 {{ define "main" }}
-<<<<<<< HEAD
-<section class="py-5 bg-primary-gradient text-white">
-    <div class="container text-center py-3">
-        <h1 class="display-5 fw-bold">{{ .Title }}</h1>
-        {{ with .Description }}
-        <p class="lead mx-auto">{{ . }}</p>
-        {{ end }}
-    </div>
-</section>
+<div class="max-w-6xl mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold mb-8 text-center">{{ .Title }}</h1>
+    {{ with .Description }}
+    <p class="text-xl text-gray-600 text-center mb-12">{{ . }}</p>
+    {{ end }}
 
-<section class="py-5 bg-white">
-    <div class="container">
-        <div class="mb-5">
-            {{ .Content }}
-        </div>
-        
-        {{ if eq .Section "projects" }}
-            {{ $portfolio := index .Site.Data "portfolio" }}
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                {{ range $portfolio.projects }}
-                <div class="col">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h3 class="card-title">{{ .name }}</h3>
-                            <p class="card-text text-muted">{{ .description }}</p>
-                            {{ if .url }}
-                            <a href="{{ .url }}" class="text-primary text-decoration-none">View Project →</a>
-                            {{ end }}
-                        </div>
-                    </div>
-                </div>
-                {{ end }}
-            </div>
-        {{ else }}
-            {{ $paginator := .Paginate .Pages.ByDate.Reverse }}
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                {{ range $paginator.Pages }}
-                <div class="col">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h3 class="card-title">
-                                <a href="{{ .RelPermalink }}" class="text-decoration-none">{{ .Title }}</a>
-                            </h3>
-                            <p class="card-text text-muted">{{ .Summary }}</p>
-                            <a href="{{ .RelPermalink }}" class="text-primary text-decoration-none">Read More →</a>
-                        </div>
-                    </div>
-                </div>
-                {{ end }}
-            </div>
-            
-            {{ if gt $paginator.TotalPages 1 }}
-            <div class="mt-5 d-flex justify-content-between">
-                {{ if $paginator.HasPrev }}
-                <a href="{{ $paginator.Prev.URL }}" class="btn btn-primary">← Previous</a>
-                {{ else }}
-                <button class="btn btn-secondary disabled">← Previous</button>
-                {{ end }}
-                
-                {{ if $paginator.HasNext }}
-                <a href="{{ $paginator.Next.URL }}" class="btn btn-primary">Next →</a>
-                {{ else }}
-                <button class="btn btn-secondary disabled">Next →</button>
-                {{ end }}
-            </div>
-=======
-<div class="max-w-4xl mx-auto px-4 py-8">
-    <h1 class="text-4xl font-bold mb-8">{{ .Title }}</h1>
-    <div class="grid gap-6">
-        {{ range .Pages }}
-        <article class="bg-white rounded-lg shadow-md p-6">
-            <h2 class="text-2xl font-semibold mb-2">
-                <a href="{{ .RelPermalink }}" class="text-primary hover:text-primary-dark">{{ .Title }}</a>
-            </h2>
-            {{ with .Description }}
-            <p class="text-gray-600">{{ . }}</p>
->>>>>>> temp-branch
-            {{ end }}
-        </article>
-        {{ end }}
+    <div class="mb-8">
+        {{ .Content }}
     </div>
+
+    {{ if eq .Section "projects" }}
+        {{ $portfolio := .Site.Data.portfolio }}
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {{ range $portfolio.projects }}
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">{{ .name }}</h3>
+                    <p class="text-gray-600 mb-4">{{ .description }}</p>
+                    {{ if .url }}
+                    <a href="{{ .url }}" class="text-primary hover:text-primary-dark">View Project →</a>
+                    {{ end }}
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    {{ else }}
+        {{ $paginator := .Paginate .Pages.ByDate.Reverse }}
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {{ range $paginator.Pages }}
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">
+                        <a href="{{ .RelPermalink }}" class="text-primary hover:text-primary-dark">{{ .Title }}</a>
+                    </h3>
+                    <p class="text-gray-600 mb-4">{{ .Summary }}</p>
+                    <a href="{{ .RelPermalink }}" class="text-primary hover:text-primary-dark">Read More →</a>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+
+        {{ if gt $paginator.TotalPages 1 }}
+        <div class="mt-8 flex justify-between">
+            {{ if $paginator.HasPrev }}
+            <a href="{{ $paginator.Prev.URL }}" class="bg-primary text-white px-6 py-2 rounded-lg shadow-md hover:shadow-lg transition duration-200">← Previous</a>
+            {{ else }}
+            <button class="bg-gray-300 text-gray-600 px-6 py-2 rounded-lg cursor-not-allowed">← Previous</button>
+            {{ end }}
+
+            {{ if $paginator.HasNext }}
+            <a href="{{ $paginator.Next.URL }}" class="bg-primary text-white px-6 py-2 rounded-lg shadow-md hover:shadow-lg transition duration-200">Next →</a>
+            {{ else }}
+            <button class="bg-gray-300 text-gray-600 px-6 py-2 rounded-lg cursor-not-allowed">Next →</button>
+            {{ end }}
+        </div>
+        {{ end }}
+    {{ end }}
 </div>
 {{ end }}

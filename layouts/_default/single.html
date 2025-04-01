@@ -1,48 +1,33 @@
 {{ define "main" }}
-<<<<<<< HEAD
-<section class="py-5 bg-primary-gradient text-white">
-    <div class="container text-center py-3">
-        <h1 class="display-5 fw-bold">{{ .Title }}</h1>
-        {{ with .Description }}
-        <p class="lead mx-auto">{{ . }}</p>
-        {{ end }}
-    </div>
-</section>
-
-<article class="py-5 bg-white">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 mx-auto">
-                <div class="mb-3">
-                    <span class="text-muted">{{ .Date.Format "January 2, 2006" }}</span>
-                </div>
-                
-                <div class="mt-4">
-                    {{ .Content }}
-                </div>
-                
-                {{ if .Params.tags }}
-                <div class="mt-5">
-                    {{ range .Params.tags }}
-                    <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="badge bg-primary text-decoration-none me-1">{{ . }}</a>
-                    {{ end }}
-                </div>
-                {{ end }}
-                
-                <div class="mt-5 pt-3 border-top">
-                    <a href="{{ .Parent.RelPermalink }}" class="btn btn-outline-primary">← Back to {{ .Parent.Title }}</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</article>
-{{ end }}
-=======
-<article class="max-w-4xl mx-auto px-4 py-8">
+<article class="max-w-4xl mx-auto px-4 py-12">
     <h1 class="text-4xl font-bold mb-4">{{ .Title }}</h1>
-    <div class="prose max-w-none">
+    {{ with .Description }}
+    <p class="text-xl text-gray-600 mb-8">{{ . }}</p>
+    {{ end }}
+
+    {{ with .Date }}
+    <div class="mb-8">
+        <span class="text-gray-500">{{ .Format "January 2, 2006" }}</span>
+    </div>
+    {{ end }}
+
+    <div class="prose max-w-none mb-8">
         {{ .Content }}
     </div>
+
+    {{ if .Params.tags }}
+    <div class="flex flex-wrap gap-2 mb-8">
+        {{ range .Params.tags }}
+        <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="bg-primary text-white px-3 py-1 rounded-full text-sm hover:bg-primary-dark transition duration-200">{{ . }}</a>
+        {{ end }}
+    </div>
+    {{ end }}
+
+    <div class="border-t pt-8">
+        <a href="{{ .Parent.RelPermalink }}" class="inline-flex items-center text-primary hover:text-primary-dark">
+            <span class="mr-2">←</span>
+            <span>Back to {{ .Parent.Title }}</span>
+        </a>
+    </div>
 </article>
 {{ end }}
->>>>>>> temp-branch
