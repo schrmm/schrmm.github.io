@@ -1,17 +1,17 @@
-<header class="bg-white dark:bg-gray-900 shadow-sm" x-data="{ isOpen: false }">
+<header class="bg-white dark:bg-gray-900 shadow-md border-b border-gray-100 dark:border-gray-800" x-data="{ isOpen: false }">
     <nav class="container mx-auto px-4 py-4">
         <div class="flex justify-between items-center">
             <!-- Logo/Site Title -->
-            <a href="/" class="text-xl font-bold text-gray-900 dark:text-white">
+            <a href="/" class="text-xl font-bold text-gray-900 dark:text-white hover:text-primary dark:hover:text-primary-light transition duration-200">
                 {{ .Site.Title }}
             </a>
 
             <!-- Desktop Navigation -->
-            <div class="hidden md:flex items-center space-x-8">
+            <div class="hidden md:flex items-center space-x-1">
                 {{ $currentPage := . }}
                 {{ range .Site.Menus.main }}
                 <a href="{{ .URL }}" 
-                   class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light {{ if $currentPage.IsMenuCurrent "main" . }}text-primary dark:text-primary-light font-semibold{{ end }}">
+                   class="px-4 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-50 dark:hover:text-primary-light dark:hover:bg-gray-800 transition duration-200 {{ if $currentPage.IsMenuCurrent "main" . }}text-primary dark:text-primary-light font-semibold bg-gray-50 dark:bg-gray-800{{ end }}">
                     {{ .Name }}
                 </a>
                 {{ end }}
@@ -19,7 +19,7 @@
                 <!-- Theme Toggle -->
                 <button 
                     @click="isDark = !isDark; localStorage.theme = isDark ? 'dark' : 'light'"
-                    class="p-2 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light"
+                    class="ml-2 p-2 rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary dark:hover:text-primary-light transition duration-200"
                     x-data="{ isDark: localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches) }"
                     @click="isDark = !isDark; localStorage.theme = isDark ? 'dark' : 'light'; if (isDark) { document.documentElement.classList.add('dark') } else { document.documentElement.classList.remove('dark') }">
                     <span x-show="!isDark" class="w-5 h-5">🌞</span>
@@ -30,7 +30,7 @@
             <!-- Mobile Menu Button -->
             <button 
                 @click="isOpen = !isOpen" 
-                class="md:hidden text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light">
+                class="md:hidden p-2 rounded-md text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary dark:hover:text-primary-light transition duration-200">
                 <svg class="h-6 w-6" x-show="!isOpen" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                 </svg>
@@ -49,10 +49,10 @@
             x-transition:leave="transition ease-in duration-150"
             x-transition:leave-start="opacity-100 translate-y-0"
             x-transition:leave-end="opacity-0 -translate-y-2"
-            class="md:hidden mt-4 space-y-4">
+            class="md:hidden mt-4 py-2 space-y-0 rounded-lg bg-white dark:bg-gray-800 shadow-lg">
             {{ range .Site.Menus.main }}
             <a href="{{ .URL }}" 
-               class="block text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light {{ if $currentPage.IsMenuCurrent "main" . }}text-primary dark:text-primary-light font-semibold{{ end }}">
+               class="block px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-primary dark:hover:text-primary-light transition duration-200 {{ if $currentPage.IsMenuCurrent "main" . }}text-primary dark:text-primary-light font-semibold bg-gray-50 dark:bg-gray-700{{ end }}">
                 {{ .Name }}
             </a>
             {{ end }}

@@ -4,6 +4,7 @@ description: "Welcome to my personal portfolio website"
 date: 2024-04-01T09:00:00-08:00
 draft: false
 layout: "home"
+author: "Chris Schramm"
 ---
 
 # Welcome to My Portfolio

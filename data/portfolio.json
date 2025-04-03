@@ -1,8 +1,8 @@
 {
   "profile": {
-    "name": "Jane Doe",
+    "name": "Chris Schramm",
     "title": "Software Developer",
-    "email": "jane.doe@example.com",
+    "email": "chris.schramm@example.com",
     "location": "San Francisco, CA",
     "bio": "Software engineer passionate about web technologies and open source."
   },
@@ -53,7 +53,7 @@
   ],
   "social_links": {
     "GitHub": "https://github.com/schrmm",
-    "LinkedIn": "https://linkedin.com/in/janedoe"
+    "LinkedIn": "https://linkedin.com/in/chrisschramm"
   },
   "education": [
     {

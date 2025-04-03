@@ -2,6 +2,9 @@
 title: "Portfolio Generator"
 description: "Automated portfolio and resume generation tool using Hugo"
 tech_stack: ["Hugo", "Go", "Tailwind CSS", "JavaScript"]
+author: "Chris Schramm"
+date: 2024-03-20
+featured: true
 ---
 
 ## Overview

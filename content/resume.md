@@ -4,6 +4,7 @@ date: 2024-04-01T09:00:00-08:00
 draft: false
 layout: "resume"
 description: "My professional experience, education, and skills"
+author: "Chris Schramm"
 ---
 
 ## About My Experience

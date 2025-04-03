@@ -20,6 +20,19 @@ module.exports = {
           dark: '#374151',    // Gray-700
           light: '#6b7280',   // Gray-500
         },
+        // Enhanced dark mode colors
+        dark: {
+          bg: {
+            primary: '#111827',   // Dark gray-900
+            secondary: '#1f2937', // Dark gray-800
+            tertiary: '#374151',  // Dark gray-700
+          },
+          text: {
+            primary: '#f9fafb',   // Gray-50
+            secondary: '#e5e7eb', // Gray-200
+            tertiary: '#9ca3af',  // Gray-400
+          }
+        }
       },
       typography: {
         DEFAULT: {

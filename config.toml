@@ -18,9 +18,9 @@ theme = "custom"
 [params]
   description = "Personal portfolio and blog of Chris Schramm - Software Developer and Tech Enthusiast"
   author = "Chris Schramm"
-  email = "your.email@example.com" # Replace with your email
+  email = "chris.schramm@example.com" # Updated email
   github = "https://github.com/schrmm"
-  linkedin = "https://linkedin.com/in/your-profile" # Replace with your LinkedIn
+  linkedin = "https://linkedin.com/in/chrisschramm" # Updated LinkedIn
   author_bio = "Software developer passionate about creating efficient, scalable solutions and sharing knowledge through writing and open source contributions."
   
   # SEO
