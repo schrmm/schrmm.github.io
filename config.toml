@@ -32,7 +32,7 @@ theme = "custom"
   
   # Theme
   mainSections = ["blog", "projects", "case-studies"]
-  colorScheme = "system" # system, light, or dark
+  colorScheme = "light" # system, light, or dark
   accentColor = "#2563eb"
   
   # Content

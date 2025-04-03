@@ -3,11 +3,22 @@
 
 <!-- Theme switcher -->
 <script>
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark')
+    // Get the site's color scheme preference from config
+    const siteColorScheme = "{{ .Site.Params.colorScheme }}";
+    
+    // Check if dark mode should be enabled
+    if (localStorage.theme === 'dark' || 
+        (localStorage.theme === undefined && 
+         siteColorScheme === 'dark' || 
+         (siteColorScheme === 'system' && 
+          window.matchMedia('(prefers-color-scheme: dark)').matches))) {
+        document.documentElement.classList.add('dark');
     } else {
-        document.documentElement.classList.remove('dark')
+        document.documentElement.classList.remove('dark');
     }
+    
+    // Set initial value for Alpine.js
+    window.initialDarkMode = document.documentElement.classList.contains('dark');
 </script>
 
 <!-- Analytics placeholder -->
