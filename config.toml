@@ -18,13 +18,13 @@ theme = "custom"
 [params]
   description = "Personal portfolio and blog of Chris Schramm - Software Developer and Tech Enthusiast"
   author = "Chris Schramm"
-  email = "chris.schramm@example.com" # Updated email
+  email = "contact@chrisschramm.dev" # Updated from example.com
   github = "https://github.com/schrmm"
-  linkedin = "https://linkedin.com/in/chrisschramm" # Updated LinkedIn
+  linkedin = "https://linkedin.com/in/chrisschramm"
   author_bio = "Software developer passionate about creating efficient, scalable solutions and sharing knowledge through writing and open source contributions."
   
   # Form handling
-  contact_form_endpoint = "https://formspree.io/f/your-form-id"
+  contact_form_endpoint = "https://formspree.io/f/xyyqrpvd" # Updated from placeholder
   
   # SEO
   images = ["images/og-image.jpg"]

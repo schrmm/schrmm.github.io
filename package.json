@@ -6,7 +6,7 @@
     "dev": "hugo server -D",
     "build": "hugo --gc --minify",
     "clean": "rimraf public resources",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"No tests specified\""
   },
   "dependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.2",

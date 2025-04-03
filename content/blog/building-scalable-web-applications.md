@@ -5,7 +5,7 @@ description: "Learn the essential principles and best practices for building web
 author: "Chris Schramm"
 categories: ["Web Development", "Architecture"]
 tags: ["scalability", "performance", "cloud", "microservices", "devops"]
-featured_image: "/images/blog/scalable-web-apps.jpg"
+featured_image: ""
 featured: true
 toc: true
 ---

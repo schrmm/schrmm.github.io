@@ -1,19 +1,30 @@
 # Personal Portfolio Website
 
-A modern, responsive personal portfolio website built with Hugo and TailwindCSS. This site showcases projects, blog posts, case studies, and professional experience.
+A modern, responsive personal portfolio website built with Hugo and TailwindCSS. This site showcases projects, blog posts, case studies, and professional experience with a thoughtfully implemented design system.
 
 ## Features
 
-- 🎨 Modern, responsive design with TailwindCSS
-- 🌓 Dark/light mode support
-- 📱 Mobile-first approach
-- 📝 Blog section with categories and tags
-- 💼 Project portfolio with detailed case studies
-- 📄 Professional resume section
-- 📬 Contact form
-- 🔍 SEO optimized
+- 🎨 Comprehensive design system with component library
+- 🌓 Enhanced dark/light mode support with improved color contrasts
+- 📱 Fully responsive design across all device sizes
+- 📝 Blog section with categories, tags, and reading time
+- 💼 Project portfolio with detailed case studies and gallery support
+- 📄 Professional resume section with timeline components
+- 📬 Contact form with improved validation
+- 🔍 SEO optimized with semantic HTML
 - 🚀 Optimized build process
 - 🔒 Enhanced security headers
+- ♿ Improved accessibility features
+
+## Design System
+
+The site implements a comprehensive design system featuring:
+
+- **Color system**: Primary, neutral, and accent color palettes with dark mode variants
+- **Typography system**: Consistent type scale and font treatments
+- **Component library**: Buttons, cards, badges, navigation elements
+- **Spacing system**: Consistent margins and paddings
+- **Animation system**: Subtle transitions and hover effects
 
 ## Quick Start
 
@@ -50,6 +61,7 @@ A modern, responsive personal portfolio website built with Hugo and TailwindCSS.
 Detailed documentation is available in the `/docs` directory:
 
 - [Architecture Overview](docs/architecture.md)
+- [Design System](docs/design-system.md)
 - [Content Management](docs/content-management.md)
 - [Development Guide](docs/development.md)
 - [Deployment Guide](docs/deployment.md)
@@ -60,14 +72,26 @@ Detailed documentation is available in the `/docs` directory:
 ```
 schrmm.github.io/
 ├── archetypes/          # Content templates
-├── assets/             # Raw assets (CSS, JS)
+├── assets/              # Asset files processed by Hugo
+│   ├── css/             # CSS files
+│   │   ├── design-system/ # Design system components
+│   │   │   ├── colors.css     # Color system
+│   │   │   ├── typography.css # Typography system
+│   │   │   └── components.css # UI components
+│   │   └── main.css      # Main stylesheet
 ├── content/            # Site content
-├── docs/              # Documentation
-├── layouts/           # Hugo templates
-├── static/            # Static files
-├── config.toml        # Hugo configuration
-├── tailwind.config.js # TailwindCSS configuration
-└── package.json       # Node.js dependencies
+├── data/               # Hugo data files
+├── docs/               # Documentation
+├── layouts/            # Hugo templates
+│   ├── _default/       # Default templates
+│   ├── partials/       # Partial templates
+│   │   ├── components/ # Reusable UI components
+├── static/             # Static files
+├── themes/             # Hugo themes
+│   └── custom/         # Custom theme files
+├── config.toml         # Hugo configuration
+├── tailwind.config.js  # TailwindCSS configuration
+└── package.json        # Node.js dependencies
 ```
 
 ## Contributing
