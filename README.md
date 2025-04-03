@@ -74,11 +74,7 @@ schrmm.github.io/
 ├── archetypes/          # Content templates
 ├── assets/              # Asset files processed by Hugo
 │   ├── css/             # CSS files
-│   │   ├── design-system/ # Design system components
-│   │   │   ├── colors.css     # Color system
-│   │   │   ├── typography.css # Typography system
-│   │   │   └── components.css # UI components
-│   │   └── main.css      # Main stylesheet
+│   │   └── main.css     # Main stylesheet with all styles
 ├── content/            # Site content
 ├── data/               # Hugo data files
 ├── docs/               # Documentation

@@ -37,35 +37,26 @@ layouts/
 ```
 assets/
 ├── css/
-│   ├── design-system/  # Design system components
-│   │   ├── colors.css     # Color variables and utilities
-│   │   ├── typography.css # Typography styles
-│   │   └── components.css # Component styles
-│   ├── main.css       # Main stylesheet
+│   └── main.css       # Main stylesheet with all styles
 ```
 
 ## Design System Architecture
 
 ### Color System
-- Primary color palette with light/dark variants
-- Neutral color palette for text and backgrounds
-- Accent colors for highlights and calls to action
-- Semantic color usage for consistent UI patterns
-- Dark mode color mapping
+- Primary teal palette with light/dark variants defined with hex values
+- Neutral slate palette for text and backgrounds
+- Amber accent colors for highlights and calls to action
+- Dark mode color mapping with dedicated variants
 
 ### Typography System
-- Consistent type scale with responsive adjustments
-- Clear typographic hierarchy
-- Optimized line heights and letter spacing
-- Font family configurations
-- Reading-optimized text styles
+- Standard Tailwind type scale
+- Consistent element spacing and margins
+- Inter and JetBrains Mono font families
 
 ### Component System
-- Reusable UI components with consistent styling
-- Composition-based approach
-- Responsive variants
-- State handling (hover, focus, active)
-- Dark mode support
+- Simple component definitions in main.css using @layer directives
+- Essential UI components with consistent styling
+- Dark mode support for all components
 
 ## Component Architecture
 
@@ -92,17 +83,18 @@ assets/
 ## Styling Architecture
 
 ### TailwindCSS Configuration
-- Custom color scheme with primary, neutral, and accent colors
+- Hex-value based color definitions with DEFAULT values
 - Extended typography configuration
-- Custom component classes
-- Dark mode variants
+- Simplified component classes
+- Dark mode using class-based toggling
 - Extended spacing scale
 
 ### CSS Organization
+- Single CSS file architecture for simplicity
 - Component-first approach using @layer directives
-- Base styles for global elements
-- Component styles for reusable UI elements
-- Utility classes for edge cases
+- Base styles for core elements (h1-h6, body, etc.)
+- Component styles for reusable UI patterns
+- Utility classes for special cases
 - Dark mode variants with class-based toggling
 
 ## Build Process
