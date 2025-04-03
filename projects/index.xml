@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Projects on Portfolio</title><link>https://schrmm.github.io/projects/</link><description>Recent content in Projects on Portfolio</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="https://schrmm.github.io/projects/index.xml" rel="self" type="application/rss+xml"/><item><title>Data Visualization Dashboard</title><link>https://schrmm.github.io/projects/data-viz-dashboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://schrmm.github.io/projects/data-viz-dashboard/</guid><description>&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>The Data Visualization Dashboard is a comprehensive web application that transforms complex datasets into intuitive, interactive visualizations. Built with React and D3.js on the frontend and powered by a FastAPI backend, this tool helps users gain valuable insights from their data through dynamic charts, graphs, and analytical tools.&lt;/p>
+&lt;h2 id="key-features">Key Features&lt;/h2>
+&lt;h3 id="1-interactive-visualizations">1. Interactive Visualizations&lt;/h3>
+&lt;ul>
+&lt;li>Real-time data updates&lt;/li>
+&lt;li>Customizable chart types (line, bar, scatter, pie)&lt;/li>
+&lt;li>Zoom and pan capabilities&lt;/li>
+&lt;li>Interactive tooltips and legends&lt;/li>
+&lt;/ul>
+&lt;h3 id="2-data-analysis-tools">2. Data Analysis Tools&lt;/h3>
+&lt;ul>
+&lt;li>Advanced filtering options&lt;/li>
+&lt;li>Custom metric calculations&lt;/li>
+&lt;li>Data aggregation tools&lt;/li>
+&lt;li>Export functionality&lt;/li>
+&lt;/ul>
+&lt;h3 id="3-responsive-design">3. Responsive Design&lt;/h3>
+&lt;ul>
+&lt;li>Mobile-friendly interface&lt;/li>
+&lt;li>Adaptive layout for different screen sizes&lt;/li>
+&lt;li>Touch-optimized interactions&lt;/li>
+&lt;li>Consistent performance across devices&lt;/li>
+&lt;/ul>
+&lt;h3 id="4-backend-integration">4. Backend Integration&lt;/h3>
+&lt;ul>
+&lt;li>RESTful API architecture&lt;/li>
+&lt;li>Efficient data processing&lt;/li>
+&lt;li>Secure authentication&lt;/li>
+&lt;li>Automated data updates&lt;/li>
+&lt;/ul>
+&lt;h2 id="technical-architecture">Technical Architecture&lt;/h2>
+&lt;h3 id="frontend">Frontend&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>React&lt;/strong>: Component-based UI development&lt;/li>
+&lt;li>&lt;strong>D3.js&lt;/strong>: Custom data visualizations&lt;/li>
+&lt;li>&lt;strong>TailwindCSS&lt;/strong>: Responsive styling&lt;/li>
+&lt;li>&lt;strong>Redux&lt;/strong>: State management&lt;/li>
+&lt;/ul>
+&lt;h3 id="backend">Backend&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>FastAPI&lt;/strong>: High-performance API framework&lt;/li>
+&lt;li>&lt;strong>PostgreSQL&lt;/strong>: Data storage and querying&lt;/li>
+&lt;li>&lt;strong>Pandas&lt;/strong>: Data processing and analysis&lt;/li>
+&lt;li>&lt;strong>Docker&lt;/strong>: Containerization and deployment&lt;/li>
+&lt;/ul>
+&lt;h2 id="implementation-details">Implementation Details&lt;/h2>
+&lt;h3 id="data-processing-pipeline">Data Processing Pipeline&lt;/h3>
+&lt;ol>
+&lt;li>Raw data ingestion&lt;/li>
+&lt;li>Cleaning and normalization&lt;/li>
+&lt;li>Aggregation and analysis&lt;/li>
+&lt;li>API endpoint generation&lt;/li>
+&lt;/ol>
+&lt;h3 id="visualization-components">Visualization Components&lt;/h3>
+&lt;ul>
+&lt;li>Custom chart components&lt;/li>
+&lt;li>Reusable visualization hooks&lt;/li>
+&lt;li>Responsive layout system&lt;/li>
+&lt;li>Theme customization&lt;/li>
+&lt;/ul>
+&lt;h2 id="getting-started">Getting Started&lt;/h2>
+&lt;ol>
+&lt;li>Clone the repository&lt;/li>
+&lt;li>Install dependencies:
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>npm install &lt;span style="color:#75715e"># Frontend&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pip install -r requirements.txt &lt;span style="color:#75715e"># Backend&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>Start the development servers:
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>npm run dev &lt;span style="color:#75715e"># Frontend&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>uvicorn main:app --reload &lt;span style="color:#75715e"># Backend&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;h2 id="future-enhancements">Future Enhancements&lt;/h2>
+&lt;ul>
+&lt;li>Machine learning integration&lt;/li>
+&lt;li>Real-time collaboration features&lt;/li>
+&lt;li>Additional visualization types&lt;/li>
+&lt;li>Advanced analytics dashboard&lt;/li>
+&lt;li>Custom report generation&lt;/li>
+&lt;/ul></description></item><item><title>Portfolio Generator</title><link>https://schrmm.github.io/projects/portfolio-generator/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://schrmm.github.io/projects/portfolio-generator/</guid><description>&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>The Portfolio Generator is a powerful tool that helps developers create and maintain their professional portfolios with ease. Built with Hugo and enhanced with Tailwind CSS, this project streamlines the process of showcasing your work, skills, and experience.&lt;/p>
+&lt;h2 id="key-features">Key Features&lt;/h2>
+&lt;h3 id="1-easy-content-management">1. Easy Content Management&lt;/h3>
+&lt;ul>
+&lt;li>Simple markdown-based content creation&lt;/li>
+&lt;li>Automated project page generation&lt;/li>
+&lt;li>Built-in support for blog posts and case studies&lt;/li>
+&lt;/ul>
+&lt;h3 id="2-modern-design">2. Modern Design&lt;/h3>
+&lt;ul>
+&lt;li>Responsive layout that works on all devices&lt;/li>
+&lt;li>Clean and professional appearance&lt;/li>
+&lt;li>Customizable color schemes and typography&lt;/li>
+&lt;/ul>
+&lt;h3 id="3-performance-optimized">3. Performance Optimized&lt;/h3>
+&lt;ul>
+&lt;li>Fast loading times with optimized assets&lt;/li>
+&lt;li>SEO-friendly structure&lt;/li>
+&lt;li>Minimal JavaScript usage&lt;/li>
+&lt;/ul>
+&lt;h3 id="4-developer-friendly">4. Developer-Friendly&lt;/h3>
+&lt;ul>
+&lt;li>Clear documentation&lt;/li>
+&lt;li>Modular component structure&lt;/li>
+&lt;li>Easy local development setup&lt;/li>
+&lt;/ul>
+&lt;h2 id="technical-details">Technical Details&lt;/h2>
+&lt;p>The project uses several modern web technologies and best practices:&lt;/p></description></item></channel></rss>
