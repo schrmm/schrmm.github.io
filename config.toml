@@ -1,4 +1,4 @@
-baseURL = "https://schrmm.github.io/"
+baseURL = "/"
 languageCode = "en-us"
 title = "Chris Schramm - Portfolio"
 enableRobotsTXT = true
@@ -42,12 +42,6 @@ theme = "custom"
   enableSearch = false
   enableDarkMode = true
   enableToc = true
-  
-  # Comments (optional)
-  # disqusShortname = ""
-  
-  # Analytics (optional)
-  # googleAnalytics = ""
 
 # Menu
 [menu]
