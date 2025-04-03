@@ -6,7 +6,8 @@
     "dev": "hugo server -D",
     "build": "hugo --gc --minify",
     "clean": "rimraf public resources",
-    "test": "echo \"No tests specified\""
+    "test": "echo \"No tests specified\"",
+    "build-css": "npx tailwindcss -i assets/css/main.css -o static/css/style.css"
   },
   "dependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.2",
@@ -17,6 +18,7 @@
     "cssnano": "^6.0.3",
     "postcss": "^8.4.35",
     "postcss-cli": "^11.0.0",
+    "postcss-import": "^16.1.0",
     "tailwindcss": "^3.4.1"
   },
   "devDependencies": {
