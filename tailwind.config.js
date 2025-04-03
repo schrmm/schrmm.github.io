@@ -53,39 +53,38 @@ module.exports = {
         DEFAULT: {
           css: {
             maxWidth: '65ch',
-            color: 'var(--color-neutral-800)',
+            color: '#1e293b',
             a: {
-              color: 'var(--color-primary-600)',
+              color: '#008c8c',
               '&:hover': {
-                color: 'var(--color-primary-700)',
+                color: '#006969',
               },
             },
             h1: {
-              color: 'var(--color-neutral-900)',
+              color: '#0f172a',
             },
             h2: {
-              color: 'var(--color-neutral-900)',
+              color: '#0f172a',
             },
             h3: {
-              color: 'var(--color-neutral-900)',
+              color: '#0f172a',
             },
             h4: {
-              color: 'var(--color-neutral-900)',
+              color: '#0f172a',
             },
             strong: {
-              color: 'var(--color-neutral-900)',
+              color: '#0f172a',
             },
             blockquote: {
-              color: 'var(--color-neutral-700)',
-              borderLeftColor: 'var(--color-primary-500)',
+              color: '#334155',
+              borderLeftColor: '#00afaf',
             },
             code: {
-              color: 'var(--color-neutral-900)',
+              color: '#0f172a',
             },
             figcaption: {
-              color: 'var(--color-neutral-500)',
+              color: '#64748b',
             },
-            // Additional typography styles can remain the same
           },
         },
       },

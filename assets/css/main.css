@@ -2,28 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Import design system files */
-@import "design-system/colors.css";
-@import "design-system/typography.css";
-@import "design-system/components.css";
-
-/* Additional custom styles can be added here */
+/* All styles in one file for simplicity */
 
 @layer base {
-  /* Custom base styles */
+  /* Base styles */
   body {
-    @apply antialiased text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-900;
+    @apply antialiased text-neutral-900 dark:text-neutral-50 bg-white dark:bg-neutral-900;
   }
 
   /* Typography */
   h1 {
-    @apply text-4xl font-bold mb-4;
+    @apply text-4xl font-bold mb-6;
   }
   h2 {
-    @apply text-3xl font-bold mb-3;
+    @apply text-3xl font-bold mb-4;
   }
   h3 {
-    @apply text-2xl font-bold mb-2;
+    @apply text-2xl font-bold mb-3;
   }
   h4 {
     @apply text-xl font-semibold mb-2;
@@ -34,44 +29,60 @@
 }
 
 @layer components {
-  /* Button styles */
+  /* Button components */
   .btn {
-    @apply inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium transition-colors duration-200;
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium text-center transition-all duration-200;
   }
+  
+  .btn-sm {
+    @apply px-4 py-2 text-sm rounded-md;
+  }
+  
+  .btn-lg {
+    @apply px-8 py-4 text-lg;
+  }
+  
   .btn-primary {
-    @apply btn bg-primary text-white hover:bg-primary-dark dark:bg-primary-light dark:hover:bg-primary-light-dark;
+    @apply bg-primary text-white hover:bg-primary-600 shadow-sm hover:shadow-md;
   }
+  
   .btn-secondary {
-    @apply btn bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600;
+    @apply bg-neutral-200 text-neutral-800 hover:bg-neutral-300 dark:bg-neutral-700 dark:text-neutral-100 dark:hover:bg-neutral-600;
   }
-
-  /* Card styles */
+  
+  /* Card component */
   .card {
-    @apply bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-shadow duration-200 hover:shadow-lg;
+    @apply bg-white dark:bg-neutral-800 rounded-xl shadow-sm overflow-hidden border border-neutral-100 dark:border-neutral-700 transition-all duration-200 p-6;
   }
-
-  /* Form styles */
-  .form-input {
-    @apply block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 dark:bg-gray-700 dark:text-white;
+  
+  .card:hover {
+    @apply shadow-md;
   }
-  .form-label {
-    @apply block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1;
-  }
-
-  /* Navigation styles */
+  
+  /* Navigation */
   .nav-link {
-    @apply text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary-light transition-colors duration-200;
+    @apply text-neutral-600 hover:text-primary dark:text-neutral-300 dark:hover:text-primary-400 transition-colors duration-200;
   }
+  
   .nav-link-active {
-    @apply text-primary dark:text-primary-light font-medium;
+    @apply text-primary dark:text-primary-400 font-medium;
+  }
+  
+  /* Layout */
+  .section {
+    @apply py-12 md:py-16;
+  }
+  
+  .container-narrow {
+    @apply max-w-4xl mx-auto px-4 sm:px-6;
   }
 }
 
 @layer utilities {
-  /* Custom utilities */
   .text-shadow {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
   }
+  
   .text-shadow-none {
     text-shadow: none;
   }
