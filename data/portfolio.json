@@ -6,14 +6,37 @@
     "location": "San Francisco, CA",
     "bio": "Software engineer passionate about web technologies and open source."
   },
+  
   "skills": [
-    "Python",
-    "JavaScript",
-    "Docker",
-    "Machine Learning",
-    "Data Analysis",
-    "Web Development"
+    "Python Development",
+    "Data Science",
+    "Process Mining",
+    "Business Intelligence",
+    "Domain-Driven Design",
+    "System Architecture",
+    "Business Process Optimization", 
+    "Project Management",
+    "Interim Management",
+    "Quality Management"  
   ],
+
+  "qualifications": [
+    "Six Sigma Black Belt",
+    "VDA 6.3 Process Auditor",
+    "EFQM Excellence Model Assessor",
+    "Tableau Desktop Certified Associate",
+  ],
+
+  "unique_skills": [
+    {
+    "Cross-Domain Integration": "Seamlessly connect software development, business process management, data analysis modeling—areas that typically exist in separate professional silos.",
+    "Structured Knowledge Architecture": "Sophisticated approach to organizing complex information demonstrates exceptional metacognitive skills, creating interconnected knowledge systems rather than isolated facts.",
+    "Domain-Modeling First Mindset": "Approach problems by first establishing clear conceptual models before implementation, reflecting a deeper understanding of system design principles.",
+    "Process Intelligence Expertise": "Knowledge of process mining and data-driven process improvement represents a relatively rare skillset that bridges technical implementation and business operations.",
+    "Backward Planning Methodology": "Goal-first approach to project planning shows a strategic mindset that starts with desired outcomes rather than available inputs."
+    }
+  ],
+
   "projects": [
     {
       "name": "Portfolio Generator",

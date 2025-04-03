@@ -27,6 +27,37 @@
         </div>
     </section>
 
+    <!-- Qualifications Section -->
+    <section id="qualifications" class="py-12 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Qualifications</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {{ range $portfolio.qualifications }}
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <span class="text-lg font-semibold text-primary">{{ . }}</span>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+    <!-- Unique Skills Section -->
+    <section id="unique-skills" class="py-12 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Unique Skills</h2>
+            <div class="grid grid-cols-1 gap-6">
+                {{ range $portfolio.unique_skills }}
+                    {{ range $skill, $description := . }}
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold text-primary mb-2">{{ $skill }}</h3>
+                        <p class="text-gray-700">{{ $description }}</p>
+                    </div>
+                    {{ end }}
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
     <!-- Featured Projects Section -->
     <section id="featured-projects" class="py-12 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4">
