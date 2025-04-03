@@ -1,120 +1,122 @@
 {{ define "main" }}
-<article class="max-w-4xl mx-auto">
-    <!-- Resume Header -->
-    <header class="mb-12 text-center">
-        <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">{{ .Title }}</h1>
-        {{ with .Description }}
-        <p class="text-xl text-gray-600 dark:text-gray-300">{{ . }}</p>
-        {{ end }}
-        
-        <!-- Download Resume Button -->
-        {{ with .Params.resume_pdf }}
-        <div class="mt-6">
-            <a href="{{ . }}" 
-               target="_blank"
-               class="inline-flex items-center px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors duration-200">
-                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                </svg>
-                Download Resume
-            </a>
-        </div>
-        {{ end }}
-    </header>
+<article class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+    <div class="max-w-4xl mx-auto">
+        <!-- Resume Header -->
+        <header class="mb-12 text-center">
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">{{ .Title }}</h1>
+            {{ with .Description }}
+            <p class="text-xl text-neutral-600 dark:text-neutral-300 font-light max-w-2xl mx-auto">{{ . }}</p>
+            {{ end }}
+            
+            <!-- Download Resume Button -->
+            {{ with .Params.resume_pdf }}
+            <div class="mt-8">
+                <a href="{{ . }}" 
+                target="_blank"
+                class="btn btn-primary btn-lg inline-flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                    </svg>
+                    Download Resume
+                </a>
+            </div>
+            {{ end }}
+        </header>
 
-    <!-- Profile Section -->
-    {{ with .Site.Data.portfolio.profile }}
-    <section class="mb-12">
-        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Profile</h2>
-        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
-            <div class="flex flex-col md:flex-row md:items-center gap-6">
-                <div class="flex-grow">
-                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">{{ .name }}</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-2">{{ .title }}</p>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4">{{ .location }}</p>
-                    <p class="text-gray-700 dark:text-gray-300">{{ .bio }}</p>
-                </div>
-                <div class="flex flex-col gap-2">
-                    <a href="mailto:{{ .email }}" class="text-primary dark:text-primary-light hover:text-primary-dark flex items-center">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                        </svg>
-                        {{ .email }}
-                    </a>
+        <!-- Profile Section -->
+        {{ with .Site.Data.portfolio.profile }}
+        <section class="mb-16">
+            <h2 class="section-title">Profile</h2>
+            <div class="card">
+                <div class="flex flex-col md:flex-row md:items-center gap-8">
+                    <div class="flex-grow">
+                        <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">{{ .name }}</h3>
+                        <p class="text-neutral-600 dark:text-neutral-300 mb-2">{{ .title }}</p>
+                        <p class="text-neutral-600 dark:text-neutral-300 mb-4">{{ .location }}</p>
+                        <p class="text-neutral-700 dark:text-neutral-300">{{ .bio }}</p>
+                    </div>
+                    <div class="flex flex-col gap-3">
+                        <a href="mailto:{{ .email }}" class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 flex items-center group">
+                            <svg class="w-5 h-5 mr-2 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                            {{ .email }}
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    {{ end }}
+        </section>
+        {{ end }}
 
-    <!-- Skills Section -->
-    {{ with .Site.Data.portfolio.skills }}
-    <section class="mb-12">
-        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Skills</h2>
-        {{ partial "components/skills-list.html" . }}
-    </section>
-    {{ end }}
+        <!-- Skills Section -->
+        {{ with .Site.Data.portfolio.skills }}
+        <section class="mb-16">
+            <h2 class="section-title">Skills</h2>
+            {{ partial "components/skills-list.html" . }}
+        </section>
+        {{ end }}
 
-    <!-- Work Experience -->
-    {{ with .Site.Data.portfolio.work_experience }}
-    <section class="mb-12">
-        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Work Experience</h2>
-        <div class="space-y-6">
-            {{ range . }}
-            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
-                <div class="flex flex-col md:flex-row md:items-start justify-between mb-4">
-                    <div>
-                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">{{ .title }}</h3>
-                        <p class="text-gray-600 dark:text-gray-300">{{ .company }}</p>
+        <!-- Work Experience -->
+        {{ with .Site.Data.portfolio.work_experience }}
+        <section class="mb-16">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="space-y-6">
+                {{ range . }}
+                <div class="card hover:shadow-md transition-all duration-300">
+                    <div class="flex flex-col md:flex-row md:items-start justify-between mb-4">
+                        <div>
+                            <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100">{{ .title }}</h3>
+                            <p class="text-neutral-600 dark:text-neutral-300 font-medium">{{ .company }}</p>
+                        </div>
+                        <p class="text-neutral-500 dark:text-neutral-400 md:text-right">{{ .dates }}</p>
                     </div>
-                    <p class="text-gray-500 dark:text-gray-400 md:text-right">{{ .dates }}</p>
-                </div>
-                {{ with .responsibilities }}
-                <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
-                    {{ range . }}
-                    <li>{{ . }}</li>
+                    {{ with .responsibilities }}
+                    <ul class="list-disc list-inside text-neutral-700 dark:text-neutral-300 space-y-2 ml-2">
+                        {{ range . }}
+                        <li>{{ . }}</li>
+                        {{ end }}
+                    </ul>
                     {{ end }}
-                </ul>
+                </div>
                 {{ end }}
             </div>
-            {{ end }}
-        </div>
-    </section>
-    {{ end }}
+        </section>
+        {{ end }}
 
-    <!-- Education -->
-    {{ with .Site.Data.portfolio.education }}
-    <section class="mb-12">
-        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Education</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {{ range . }}
-            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
-                <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">{{ .degree }}</h3>
-                <p class="text-gray-600 dark:text-gray-300 mb-2">{{ .institution }}</p>
-                <p class="text-gray-500 dark:text-gray-400">{{ .year }}</p>
+        <!-- Education -->
+        {{ with .Site.Data.portfolio.education }}
+        <section class="mb-16">
+            <h2 class="section-title">Education</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {{ range . }}
+                <div class="card hover:shadow-md transition-all duration-300">
+                    <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2">{{ .degree }}</h3>
+                    <p class="text-neutral-600 dark:text-neutral-300 mb-2">{{ .institution }}</p>
+                    <p class="text-neutral-500 dark:text-neutral-400">{{ .year }}</p>
+                </div>
+                {{ end }}
             </div>
-            {{ end }}
-        </div>
-    </section>
-    {{ end }}
+        </section>
+        {{ end }}
 
-    <!-- Qualifications -->
-    {{ with .Site.Data.portfolio.qualifications }}
-    <section class="mb-12">
-        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Certifications & Qualifications</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {{ range . }}
-            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
-                <p class="text-gray-700 dark:text-gray-300">{{ . }}</p>
+        <!-- Qualifications -->
+        {{ with .Site.Data.portfolio.qualifications }}
+        <section class="mb-16">
+            <h2 class="section-title">Certifications & Qualifications</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {{ range . }}
+                <div class="card hover:shadow-md transition-all duration-300">
+                    <p class="text-neutral-700 dark:text-neutral-300">{{ . }}</p>
+                </div>
+                {{ end }}
             </div>
-            {{ end }}
-        </div>
-    </section>
-    {{ end }}
+        </section>
+        {{ end }}
 
-    <!-- Resume Content -->
-    <div class="prose dark:prose-invert max-w-none">
-        {{ .Content }}
+        <!-- Resume Content -->
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+            {{ .Content }}
+        </div>
     </div>
 </article>
 {{ end }}

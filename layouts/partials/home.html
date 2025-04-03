@@ -1,89 +1,202 @@
 {{ $portfolio := .Site.Data.portfolio }}
 <main>
     <!-- Hero Section -->
-    <section class="py-16 bg-gradient-to-r from-primary to-secondary text-white">
-        <div class="max-w-6xl mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">{{ $portfolio.profile.name }}</h1>
-            <h2 class="text-2xl md:text-3xl mb-6">{{ $portfolio.profile.title }}</h2>
-            <p class="text-lg max-w-2xl mx-auto mb-8">{{ $portfolio.profile.bio }}</p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="/projects/" class="bg-white text-primary px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition duration-200 font-medium">View Projects</a>
-                <a href="/resume/" class="border-2 border-white text-white px-6 py-3 rounded-lg hover:bg-white hover:text-primary transition duration-200 font-medium">View Resume</a>
+    <section class="py-20 md:py-32 bg-gradient-to-br from-primary-600 via-primary-500 to-primary-700 text-white relative overflow-hidden">
+        <!-- Background Decoration -->
+        <div class="absolute inset-0 overflow-hidden opacity-10">
+            <div class="absolute -right-10 top-1/4 w-64 h-64 bg-white rounded-full"></div>
+            <div class="absolute left-1/3 -bottom-20 w-96 h-96 bg-white rounded-full"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <span class="badge badge-accent inline-block mb-4">Software Developer</span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                    {{ $portfolio.profile.name }}
+                </h1>
+                <p class="text-xl md:text-2xl font-light mb-8 text-white/90 max-w-3xl mx-auto">
+                    {{ $portfolio.profile.bio }}
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="/projects/" class="btn-primary">
+                        Explore My Projects
+                    </a>
+                    <a href="/resume/" class="btn border-2 border-white text-white hover:bg-white hover:text-primary-600 transition duration-200">
+                        View Resume
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlights Section - NEW -->
+    <section class="section bg-white dark:bg-neutral-900 border-b border-neutral-100 dark:border-neutral-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-6 border border-neutral-200 dark:border-neutral-700 rounded-xl bg-white dark:bg-neutral-800 group hover:border-primary-500 dark:hover:border-primary-500 transition-all duration-200">
+                    <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mb-4 text-primary-600 dark:text-primary-400 group-hover:bg-primary-500 group-hover:text-white transition-all duration-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2 text-neutral-900 dark:text-neutral-100">Software Development</h3>
+                    <p class="text-neutral-600 dark:text-neutral-400">Expert in creating efficient, scalable applications with attention to code quality and best practices.</p>
+                </div>
+                
+                <div class="p-6 border border-neutral-200 dark:border-neutral-700 rounded-xl bg-white dark:bg-neutral-800 group hover:border-primary-500 dark:hover:border-primary-500 transition-all duration-200">
+                    <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mb-4 text-primary-600 dark:text-primary-400 group-hover:bg-primary-500 group-hover:text-white transition-all duration-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2 text-neutral-900 dark:text-neutral-100">Data Science</h3>
+                    <p class="text-neutral-600 dark:text-neutral-400">Transforming data into actionable insights through analysis, visualization, and machine learning techniques.</p>
+                </div>
+                
+                <div class="p-6 border border-neutral-200 dark:border-neutral-700 rounded-xl bg-white dark:bg-neutral-800 group hover:border-primary-500 dark:hover:border-primary-500 transition-all duration-200">
+                    <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mb-4 text-primary-600 dark:text-primary-400 group-hover:bg-primary-500 group-hover:text-white transition-all duration-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2 text-neutral-900 dark:text-neutral-100">Process Management</h3>
+                    <p class="text-neutral-600 dark:text-neutral-400">Optimizing business processes through domain-driven design and systematic improvement methodologies.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-16 bg-white">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-10">Skills</h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {{ range $portfolio.skills }}
-                <div class="bg-gray-50 p-4 rounded-lg shadow-sm text-center hover:shadow-md transition duration-200">
-                    {{ . }}
+    <section id="skills" class="section bg-neutral-50 dark:bg-neutral-900">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">My Toolkit</h2>
+                <p class="text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">A combination of technical skills, tools, and methodologies I use to deliver high-quality solutions.</p>
+            </div>
+            
+            <!-- Use our updated skills-list component -->
+            {{ partial "components/skills-list" $portfolio.skills }}
+            
+            <!-- Qualifications -->
+            <div class="mt-12 pt-12 border-t border-neutral-200 dark:border-neutral-800">
+                <h3 class="text-2xl font-semibold mb-6 text-center text-neutral-900 dark:text-neutral-100">Qualifications & Certifications</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                    {{ range $portfolio.qualifications }}
+                    <div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 p-4 rounded-lg shadow-sm flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-primary-500 mr-2 flex-shrink-0">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                        </svg>
+                        <span class="text-neutral-700 dark:text-neutral-300">{{ . }}</span>
+                    </div>
+                    {{ end }}
                 </div>
-                {{ end }}
             </div>
         </div>
     </section>
 
     <!-- Featured Projects Section -->
-    <section id="featured-projects" class="py-16 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-10">Featured Projects</h2>
+    <section id="featured-projects" class="section bg-white dark:bg-neutral-900">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">Featured Projects</h2>
+                <p class="text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">A selection of my recent work, showcasing my skills and approach to problem-solving.</p>
+            </div>
+            
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {{ range where $portfolio.projects "featured" true }}
                 {{ $title := .name }}
                 {{ $projectPage := $.Site.GetPage (printf "/projects/%s" (urlize .name)) }}
-                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-200">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3">{{ .name }}</h3>
-                        <p class="text-gray-600 mb-4">{{ .description }}</p>
-                        {{ if $projectPage }}
-                        <a href="{{ $projectPage.RelPermalink }}" class="text-primary hover:text-primary-dark font-medium">View Project →</a>
-                        {{ end }}
+                
+                <!-- Use our project-card partial -->
+                {{ if $projectPage }}
+                    {{ partial "components/project-card" $projectPage }}
+                {{ else }}
+                    <div class="card group">
+                        <div class="aspect-w-16 aspect-h-9 bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 opacity-75">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3" />
+                            </svg>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">{{ .name }}</h3>
+                            <p class="text-neutral-600 dark:text-neutral-300 mb-4">{{ .description }}</p>
+                        </div>
                     </div>
-                </div>
+                {{ end }}
                 {{ end }}
             </div>
+            
             <div class="text-center mt-10">
-                <a href="/projects/" class="bg-primary text-white px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition duration-200 font-medium">View All Projects</a>
+                <a href="/projects/" class="btn-primary">View All Projects</a>
             </div>
         </div>
     </section>
 
-    <!-- Connect Section (Streamlined About Me) -->
-    <section id="connect" class="py-16 bg-white">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-10">Let's Connect</h2>
-            <div class="flex flex-col md:flex-row gap-8 justify-center items-center">
-                <div class="bg-gray-50 rounded-lg shadow-md p-6 hover:shadow-lg transition duration-200 md:w-96">
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-3">
-                            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                            </svg>
-                            <span>{{ $portfolio.profile.location }}</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                            </svg>
-                            <a href="mailto:{{ $portfolio.profile.email }}" class="hover:text-primary transition duration-200">{{ $portfolio.profile.email }}</a>
-                        </div>
-                        <div class="pt-4 flex gap-4 justify-center">
-                            {{ range $platform, $url := $portfolio.social_links }}
-                            <a href="{{ $url }}" class="text-primary hover:text-primary-dark transition duration-200 font-medium">{{ $platform }}</a>
-                            {{ end }}
-                        </div>
-                    </div>
+    <!-- Connect Section -->
+    <section id="connect" class="section bg-neutral-50 dark:bg-neutral-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">Let's Connect</h2>
+                    <p class="text-neutral-600 dark:text-neutral-400">Interested in working together or have a question? Feel free to reach out.</p>
                 </div>
-                <div class="md:w-96 text-center md:text-left">
-                    <p class="text-gray-600 text-lg mb-4">Want to know more about my experience and skills?</p>
-                    <div class="flex flex-col gap-4">
-                        <a href="/resume/" class="text-center bg-primary text-white px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition duration-200 font-medium">View My Resume</a>
-                        <a href="/contact/" class="text-center border border-primary text-primary px-6 py-3 rounded-lg hover:bg-primary hover:text-white transition duration-200 font-medium">Contact Me</a>
+                
+                <div class="bg-white dark:bg-neutral-900 rounded-xl shadow-md overflow-hidden">
+                    <div class="md:flex">
+                        <div class="md:w-1/2 p-8 bg-gradient-to-br from-primary-600 to-primary-700 text-white">
+                            <h3 class="text-xl font-semibold mb-4">Contact Information</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center">
+                                    <svg class="w-5 h-5 mr-3 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                    <span>{{ $portfolio.profile.location }}</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <svg class="w-5 h-5 mr-3 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                    </svg>
+                                    <a href="mailto:{{ $portfolio.profile.email }}" class="hover:underline transition duration-200">{{ $portfolio.profile.email }}</a>
+                                </div>
+                                <div class="pt-6 flex space-x-4">
+                                    {{ range $platform, $url := $portfolio.social_links }}
+                                    <a href="{{ $url }}" target="_blank" rel="noopener noreferrer" class="hover:text-white/80 transition duration-200">
+                                        {{ $platform }}
+                                    </a>
+                                    {{ end }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 p-8">
+                            <h3 class="text-xl font-semibold mb-4 text-neutral-900 dark:text-neutral-100">Quick Links</h3>
+                            <div class="space-y-4">
+                                <a href="/resume/" class="block p-4 rounded-lg border border-neutral-200 dark:border-neutral-700 hover:border-primary-500 hover:shadow-sm transition-all duration-200">
+                                    <div class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-primary-500 mr-3">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                                        </svg>
+                                        <span class="text-neutral-900 dark:text-neutral-100 font-medium">View My Resume</span>
+                                    </div>
+                                </a>
+                                <a href="/contact/" class="block p-4 rounded-lg border border-neutral-200 dark:border-neutral-700 hover:border-primary-500 hover:shadow-sm transition-all duration-200">
+                                    <div class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-primary-500 mr-3">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
+                                        </svg>
+                                        <span class="text-neutral-900 dark:text-neutral-100 font-medium">Contact Me</span>
+                                    </div>
+                                </a>
+                                <a href="/blog/" class="block p-4 rounded-lg border border-neutral-200 dark:border-neutral-700 hover:border-primary-500 hover:shadow-sm transition-all duration-200">
+                                    <div class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-primary-500 mr-3">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                                        </svg>
+                                        <span class="text-neutral-900 dark:text-neutral-100 font-medium">Read My Blog</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

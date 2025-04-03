@@ -1,51 +1,112 @@
 ---
-description: This rule set helps after initiating a new chat
+description: 
 globs: 
-alwaysApply: false
+alwaysApply: true
 ---
-# Project rules
-- Never switch technologys if we run into multiple sequential errors due to a decided technology
-- Data used for content is creation is stored in /data and json files
-- New content will be stored in NC.md
+Here are well-defined rules and responsibilities for your project using **Hugo, Tailwind, GitHub Pages, GitHub Actions, and Git/GitHub**.  
+
+---
+
+## 🚀 **Project Rules & Guidelines**  
+
+### 🔹 General Rules (Applicable to All Agents)  
+✅ **Version Control:**  
+- Use **feature branches** (never commit directly to `main`). Follow naming conventions like `feature/xyz`, `fix/abc`, or `content/new-blog-post`.  
+- Every pull request (PR) **must** be reviewed by at least one team member before merging.  
+- Use **semantic commit messages** (`feat:`, `fix:`, `docs:`, `refactor:`).  
+
+✅ **Coding & Styling:**  
+- Follow the **Tailwind CSS best practices** (e.g., avoid unnecessary utility classes, use `@apply` for reusable styles).  
+- Keep **Hugo templates clean** (use **partials** and **shortcodes**).  
+- Follow **GitHub Actions best practices** (e.g., limit workflow runs to necessary triggers).  
+
+✅ **Collaboration & Communication:**  
+- Discuss major changes in **GitHub Issues** before implementing them.  
+- All documentation should be updated **before closing a PR**.  
+- Follow **agreed deadlines** and flag delays early.  
+
+---
+
+## 🖥 **Frontend Developer & Designer**  
+👨‍🎨 **Responsibilities:**  
+- Implement responsive UI with **Tailwind CSS**.  
+- Ensure Hugo templates and shortcodes follow best practices.  
+- Optimize images and assets for performance.  
+- Follow accessibility guidelines (WCAG).  
+
+🛠 **Tools & Best Practices:**  
+- Use **Tailwind’s JIT mode** for optimized builds.  
+- Leverage **Hugo Pipes** for asset processing.  
+- Maintain a **consistent UI/UX style guide**.  
+
+📝 **Git & Deployment Rules:**  
+- PRs should **reference a GitHub Issue** with a summary of changes.  
+- **Test UI changes** locally before pushing (`hugo server`).  
+- Ensure changes **do not break existing layouts**.  
+
+---
+
+## 📜 **Hugo Specialist**  
+⚡ **Responsibilities:**  
+- Maintain Hugo structure, layouts, and shortcodes.  
+- Optimize build times with **Hugo Pipes** and caching.  
+- Ensure **content rendering is efficient** and reusable.  
+
+📌 **Best Practices:**  
+- Use **partials for reusable templates**.  
+- Implement **Hugo data files** where possible (instead of hardcoding).  
+- Keep `config.toml` clean and modular.  
+
+📝 **Git & Deployment Rules:**  
+- Every **Hugo update** must be tested locally before merging.  
+- PRs should not introduce **breaking changes to site structure**.  
+- Ensure **shortcodes are backward-compatible** before modifying them.  
+
+---
+
+## 📝 **Content Manager**  
+📚 **Responsibilities:**  
+- Manage Markdown content within the `content/` directory.  
+- Maintain **SEO-friendly meta descriptions & Open Graph tags**.  
+- Review & test content locally before pushing.  
+
+📌 **Best Practices:**  
+- Use **Front Matter correctly** (`title`, `date`, `tags`, `author`).  
+- Keep **file names clean** (`content/blog/my-article.md`).  
+- Ensure **links are valid** and images have **alt text**.  
+
+📝 **Git & Deployment Rules:**  
+- **Use a separate branch** for content updates.  
+- PRs should have a **content review checklist** (e.g., spell check, formatting).  
+- Content updates should not affect **site design**.  
+
+---
+
+## ⚙️ **DevOps Engineer**  
+🛠 **Responsibilities:**  
+- Manage **GitHub Actions workflows** for deployment.  
+- Ensure **GitHub Pages deployment is smooth & automated**.  
+- Implement **caching & performance optimizations**.  
+
+📌 **Best Practices:**  
+- Use **GitHub Actions caching** for Hugo builds (`hugo --gc --minify`).  
+- Automate PR previews with **GitHub Actions & temporary deployments**.  
+- Ensure **error-free deployments** (use `hugo --debug`).  
+
+📝 **Git & Deployment Rules:**  
+- Deployment workflow **should run only on merges to `main`**.  
+- Keep secrets **in GitHub Actions Secrets**, not in the repo.  
+- PRs must be **tested on a preview branch** before merging.  
+
+---
 
 ## Technology Stack
-### Core Technologies
+### Core Technologies / Frameworks
 - Hugo: Static site generator
 - TailwindCSS: Styling framework
-- Conda (webdesign environment)
 - SQLite: Database management
 - Git/GitHub: Version control
 - GitHub Actions: CI/CD
 - GitHub Pages: Hosting
-
-## Agent Roles and Role-Specific git Workflows
-These roles very often have to work together
-
-### Frontend Developer
-- Focus on component-based branches
-- Include design assets and screenshots in PRs
-- Coordinate with designers on visual reviews
-
-### Framework Specialist
-- Handle template system changes
-- Manage dependency updates
-- Document breaking changes clearly
-
-### Content Manager
-- Use content branches for pure content updates
-- Coordinate with technical team for structural changes
-- Include previews in pull requests
-
-### DevOps Engineer
-- Manage CI/CD pipeline configurations
-- Review deployment-related changes
-- Handle infrastructure as code updates
-
-### Specialized Considerations
-
-- **Frontend Developer & Designer**: Work in `feature/*` branches for UI changes
-- **Hugo Specialist**: Handles `feature/hugo-*` branches for template changes
-- **Content Manager**: Works in `content/*` branches for text/media updates
-- **DevOps Engineer**: Manages workflow configurations in `feature/ci-*` branches
-- **SEO Specialist**: Creates `feature/seo-*` branches for optimization work
+- Powershell on Windows
 

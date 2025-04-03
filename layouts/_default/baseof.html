@@ -1,22 +1,24 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode | default "en" }}">
+<html lang="{{ .Site.LanguageCode | default "en" }}" class="scroll-smooth">
 <head>
     {{ block "head" . }}
         {{ partial "head.html" . }}
         {{ block "styles" . }}{{ end }}
     {{ end }}
 </head>
-<body class="min-h-screen flex flex-col bg-white dark:bg-gray-900">
+<body class="min-h-screen flex flex-col bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 antialiased">
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:p-4 focus:bg-primary-600 focus:text-white focus:z-50">
+        Skip to content
+    </a>
+
     {{ block "header" . }}
         {{ partial "header.html" . }}
     {{ end }}
 
-    <main class="flex-grow">
+    <main id="main-content" class="flex-grow">
         {{ block "hero" . }}{{ end }}
-        
-        <div class="container mx-auto px-4 py-8">
-            {{ block "main" . }}{{ end }}
-        </div>
+        {{ block "main" . }}{{ end }}
     </main>
 
     {{ block "footer" . }}

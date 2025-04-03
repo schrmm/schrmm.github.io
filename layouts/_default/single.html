@@ -1,33 +1,91 @@
 {{ define "main" }}
-<article class="max-w-4xl mx-auto px-4 py-12">
-    <h1 class="text-4xl font-bold mb-4">{{ .Title }}</h1>
-    {{ with .Description }}
-    <p class="text-xl text-gray-600 mb-8">{{ . }}</p>
-    {{ end }}
+<article class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+    <div class="max-w-3xl mx-auto">
+        <header class="mb-10">
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">{{ .Title }}</h1>
+            
+            {{ with .Description }}
+            <p class="text-xl text-neutral-600 dark:text-neutral-300 mb-6 font-light">{{ . }}</p>
+            {{ end }}
 
-    {{ with .Date }}
-    <div class="mb-8">
-        <span class="text-gray-500">{{ .Format "January 2, 2006" }}</span>
-    </div>
-    {{ end }}
+            <div class="flex flex-wrap items-center text-sm text-neutral-500 dark:text-neutral-400 gap-4 border-b border-neutral-200 dark:border-neutral-700 pb-6">
+                {{ with .Date }}
+                <span class="flex items-center">
+                    <svg class="w-4 h-4 mr-2 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                    {{ .Format "January 2, 2006" }}
+                </span>
+                {{ end }}
 
-    <div class="prose max-w-none mb-8">
-        {{ .Content }}
-    </div>
+                {{ with .Params.categories }}
+                <span class="flex items-center">
+                    <svg class="w-4 h-4 mr-2 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/>
+                    </svg>
+                    {{ range . }}
+                    <a href="/categories/{{ . | urlize }}/" class="hover:text-primary-600 dark:hover:text-primary-400">{{ . }}</a>
+                    {{ end }}
+                </span>
+                {{ end }}
 
-    {{ if .Params.tags }}
-    <div class="flex flex-wrap gap-2 mb-8">
-        {{ range .Params.tags }}
-        <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="bg-primary text-white px-3 py-1 rounded-full text-sm hover:bg-primary-dark transition duration-200">{{ . }}</a>
+                <span class="flex items-center">
+                    <svg class="w-4 h-4 mr-2 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    {{ .ReadingTime }} min read
+                </span>
+            </div>
+        </header>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none mb-16">
+            {{ .Content }}
+        </div>
+
+        {{ with .Params.tags }}
+        <div class="mb-12 border-t border-neutral-200 dark:border-neutral-700 pt-8">
+            <h3 class="text-lg font-medium text-neutral-900 dark:text-neutral-100 mb-4">Tags</h3>
+            <div class="flex flex-wrap gap-2">
+                {{ range . }}
+                <a href="/tags/{{ . | urlize }}/" class="badge badge-secondary">{{ . }}</a>
+                {{ end }}
+            </div>
+        </div>
         {{ end }}
-    </div>
-    {{ end }}
 
-    <div class="border-t pt-8">
-        <a href="{{ .Parent.RelPermalink }}" class="inline-flex items-center text-primary hover:text-primary-dark">
-            <span class="mr-2">←</span>
-            <span>Back to {{ .Parent.Title }}</span>
-        </a>
+        <div class="flex justify-between items-center border-t border-neutral-200 dark:border-neutral-700 pt-8">
+            {{ with .PrevInSection }}
+            <a href="{{ .RelPermalink }}" 
+            class="flex items-center text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium group">
+                <svg class="w-5 h-5 mr-2 transition-transform duration-200 group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+                <span>Previous Article</span>
+            </a>
+            {{ else }}
+            <div></div>
+            {{ end }}
+
+            <a href="{{ .Parent.RelPermalink }}" 
+            class="flex items-center text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-300 font-medium">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                </svg>
+                <span>Back to {{ .Parent.Title }}</span>
+            </a>
+
+            {{ with .NextInSection }}
+            <a href="{{ .RelPermalink }}" 
+            class="flex items-center text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium group">
+                <span>Next Article</span>
+                <svg class="w-5 h-5 ml-2 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+            </a>
+            {{ else }}
+            <div></div>
+            {{ end }}
+        </div>
     </div>
 </article>
 {{ end }}

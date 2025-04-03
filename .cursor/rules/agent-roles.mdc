@@ -1,0 +1,25 @@
+---
+description: Details for each agent and role
+globs: 
+alwaysApply: false
+---
+# Roles
+## Frontend Developer
+- Focus on component-based branches
+- Include design assets and screenshots in PRs
+- Coordinate with designers on visual reviews
+
+## Framework Specialist
+- Handle template system changes
+- Manage dependency updates
+- Document breaking changes clearly
+
+## Content Manager
+- Use content branches for pure content updates
+- Coordinate with technical team for structural changes
+- Include previews in pull requests
+
+## DevOps Engineer
+- Manage CI/CD pipeline configurations
+- Review deployment-related changes
+- Handle infrastructure as code updates

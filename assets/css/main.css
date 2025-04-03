@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import design system files */
+@import "design-system/colors.css";
+@import "design-system/typography.css";
+@import "design-system/components.css";
+
+/* Additional custom styles can be added here */
+
 @layer base {
   /* Custom base styles */
   body {

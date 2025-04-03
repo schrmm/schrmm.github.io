@@ -1,78 +1,149 @@
 {{ define "main" }}
-<div class="max-w-4xl mx-auto px-4 py-12">
-    <h1 class="text-4xl font-bold mb-4 text-center text-gray-800">{{ .Title }}</h1>
-    {{ with .Description }}
-    <p class="text-xl text-gray-600 text-center mb-10 max-w-2xl mx-auto">{{ . }}</p>
-    {{ end }}
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+    <div class="max-w-4xl mx-auto">
+        <header class="mb-12 text-center">
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 dark:text-neutral-100 mb-4">{{ .Title }}</h1>
+            {{ with .Description }}
+            <p class="text-lg md:text-xl text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto font-light">{{ . }}</p>
+            {{ end }}
+        </header>
 
-    <div class="mb-12 prose prose-lg max-w-3xl mx-auto">
-        {{ .Content }}
-    </div>
-
-    {{ if eq .Section "projects" }}
-        <div class="space-y-8">
-            {{ range .Pages }}
-            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 p-8 border border-gray-100">
-                <h3 class="text-2xl font-bold mb-2 text-gray-800">{{ .Title }}</h3>
-                <p class="text-gray-600 mb-5 text-lg">{{ .Description }}</p>
-                
-                {{ with .Params.tech_stack }}
-                <div class="mb-6">
-                    <div class="flex flex-wrap gap-2">
-                        {{ range . }}
-                        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium">{{ . }}</span>
-                        {{ end }}
-                    </div>
+        <div class="mb-16">
+            {{ if eq .Section "projects" }}
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {{ range .Pages }}
+                    <article class="card hover:shadow-lg transition-all duration-300">
+                        <div class="aspect-w-16 aspect-h-9 card-image">
+                            {{ with .Params.image }}
+                            <img src="{{ . }}" alt="{{ $.Title }}" class="object-cover w-full h-full">
+                            {{ else }}
+                            <div class="w-full h-full bg-neutral-100 dark:bg-neutral-800 flex items-center justify-center">
+                                <svg class="w-16 h-16 text-neutral-300 dark:text-neutral-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                            {{ end }}
+                        </div>
+                        <div class="card-body">
+                            <h2 class="card-title">{{ .Title }}</h2>
+                            <p class="card-text">{{ .Description }}</p>
+                            
+                            {{ with .Params.tech_stack }}
+                            <div class="flex flex-wrap gap-2 mt-4 mb-6">
+                                {{ range first 3 . }}
+                                <span class="badge badge-primary">{{ . }}</span>
+                                {{ end }}
+                                {{ if gt (len .) 3 }}
+                                <span class="badge badge-secondary">+{{ sub (len .) 3 }}</span>
+                                {{ end }}
+                            </div>
+                            {{ end }}
+                            
+                            <a href="{{ .RelPermalink }}" class="btn btn-primary">View Project</a>
+                        </div>
+                    </article>
+                    {{ end }}
                 </div>
+            {{ else if eq .Section "blog" }}
+                <div class="space-y-12">
+                    {{ range .Pages }}
+                    <article class="flex flex-col md:flex-row gap-8 hover:bg-neutral-50 dark:hover:bg-neutral-900 rounded-xl p-4 transition-colors duration-300">
+                        {{ with .Params.image }}
+                        <div class="md:w-1/3 rounded-xl overflow-hidden">
+                            <img src="{{ . }}" alt="{{ $.Title }}" class="object-cover w-full h-48 md:h-full">
+                        </div>
+                        {{ end }}
+                        <div class="{{ if .Params.image }}md:w-2/3{{ else }}w-full{{ end }}">
+                            <h2 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-2 hover:text-primary-600 dark:hover:text-primary-400">
+                                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                            </h2>
+                            <div class="flex items-center text-sm text-neutral-500 dark:text-neutral-400 mb-3">
+                                <span class="flex items-center">
+                                    <svg class="w-4 h-4 mr-2 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                    </svg>
+                                    {{ .Date.Format "January 2, 2006" }}
+                                </span>
+                                {{ with .Params.categories }}
+                                <span class="mx-2">•</span>
+                                <span>
+                                    {{ range first 1 . }}
+                                    {{ . }}
+                                    {{ end }}
+                                </span>
+                                {{ end }}
+                                <span class="mx-2">•</span>
+                                <span>{{ .ReadingTime }} min read</span>
+                            </div>
+                            <p class="text-neutral-600 dark:text-neutral-300 mb-4">{{ .Description }}</p>
+                            <a href="{{ .RelPermalink }}" class="text-primary-600 dark:text-primary-400 font-medium hover:text-primary-700 dark:hover:text-primary-300 inline-flex items-center group">
+                                Read More
+                                <svg class="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                    {{ end }}
+                </div>
+            {{ else }}
+                <div class="space-y-12">
+                    {{ range .Pages }}
+                    <article>
+                        <h2 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
+                            <a href="{{ .RelPermalink }}" class="hover:text-primary-600 dark:hover:text-primary-400">{{ .Title }}</a>
+                        </h2>
+                        {{ with .Description }}
+                        <p class="text-neutral-600 dark:text-neutral-300 mb-4">{{ . }}</p>
+                        {{ end }}
+                        <a href="{{ .RelPermalink }}" class="text-primary-600 dark:text-primary-400 font-medium hover:text-primary-700 dark:hover:text-primary-300 inline-flex items-center group">
+                            Read More
+                            <svg class="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                            </svg>
+                        </a>
+                    </article>
+                    {{ end }}
+                </div>
+            {{ end }}
+        </div>
+
+        <!-- Pagination -->
+        {{ if gt .Paginator.TotalPages 1 }}
+        <nav class="flex justify-center">
+            <ul class="pagination">
+                {{ if .Paginator.HasPrev }}
+                <li>
+                    <a href="{{ .Paginator.Prev.URL }}" class="pagination-link">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                        </svg>
+                        Previous
+                    </a>
+                </li>
                 {{ end }}
                 
-                <div class="flex justify-end">
-                    <a href="{{ .RelPermalink }}" class="inline-flex items-center px-5 py-2 bg-primary text-white rounded-md hover:bg-blue-600 transition-colors duration-200 text-center font-medium">
-                        <span>View Project</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                {{ range .Paginator.Pagers }}
+                <li>
+                    <a href="{{ .URL }}" class="pagination-number {{ if eq . $.Paginator }}active{{ end }}">
+                        {{ .PageNumber }}
+                    </a>
+                </li>
+                {{ end }}
+                
+                {{ if .Paginator.HasNext }}
+                <li>
+                    <a href="{{ .Paginator.Next.URL }}" class="pagination-link">
+                        Next
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                         </svg>
                     </a>
-                </div>
-            </div>
-            {{ end }}
-        </div>
-    {{ else }}
-        {{ $paginator := .Paginate .Pages.ByDate.Reverse }}
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {{ range $paginator.Pages }}
-            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2">
-                        <a href="{{ .RelPermalink }}" class="text-primary hover:text-primary-dark">{{ .Title }}</a>
-                    </h3>
-                    <p class="text-gray-600 mb-4">{{ .Summary }}</p>
-                    <a href="{{ .RelPermalink }}" class="text-primary hover:text-primary-dark font-medium flex items-center">
-                        <span>Read More</span> 
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-            {{ end }}
-        </div>
-
-        {{ if gt $paginator.TotalPages 1 }}
-        <div class="mt-12 flex justify-between">
-            {{ if $paginator.HasPrev }}
-            <a href="{{ $paginator.Prev.URL }}" class="bg-primary text-white px-6 py-2 rounded-md shadow-md hover:shadow-lg transition duration-200">← Previous</a>
-            {{ else }}
-            <button class="bg-gray-300 text-gray-600 px-6 py-2 rounded-md cursor-not-allowed">← Previous</button>
-            {{ end }}
-
-            {{ if $paginator.HasNext }}
-            <a href="{{ $paginator.Next.URL }}" class="bg-primary text-white px-6 py-2 rounded-md shadow-md hover:shadow-lg transition duration-200">Next →</a>
-            {{ else }}
-            <button class="bg-gray-300 text-gray-600 px-6 py-2 rounded-md cursor-not-allowed">Next →</button>
-            {{ end }}
-        </div>
+                </li>
+                {{ end }}
+            </ul>
+        </nav>
         {{ end }}
-    {{ end }}
+    </div>
 </div>
 {{ end }}

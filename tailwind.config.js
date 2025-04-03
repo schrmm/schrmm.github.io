@@ -9,97 +9,76 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        // New primary teal palette
         primary: {
-          DEFAULT: '#2563eb', // Blue-600
-          dark: '#1d4ed8',    // Blue-700
-          light: '#3b82f6',   // Blue-500
-          'light-dark': '#60a5fa', // Blue-400
+          50: 'var(--color-primary-50)',
+          100: 'var(--color-primary-100)',
+          200: 'var(--color-primary-200)',
+          300: 'var(--color-primary-300)',
+          400: 'var(--color-primary-400)',
+          500: 'var(--color-primary-500)',
+          600: 'var(--color-primary-600)',
+          700: 'var(--color-primary-700)',
+          800: 'var(--color-primary-800)',
+          900: 'var(--color-primary-900)',
         },
-        secondary: {
-          DEFAULT: '#4b5563', // Gray-600
-          dark: '#374151',    // Gray-700
-          light: '#6b7280',   // Gray-500
+        // Accent amber palette
+        accent: {
+          300: 'var(--color-accent-300)',
+          500: 'var(--color-accent-500)',
+          700: 'var(--color-accent-700)',
         },
-        // Enhanced dark mode colors
-        dark: {
-          bg: {
-            primary: '#111827',   // Dark gray-900
-            secondary: '#1f2937', // Dark gray-800
-            tertiary: '#374151',  // Dark gray-700
-          },
-          text: {
-            primary: '#f9fafb',   // Gray-50
-            secondary: '#e5e7eb', // Gray-200
-            tertiary: '#9ca3af',  // Gray-400
-          }
-        }
+        // Neutral slate palette
+        neutral: {
+          50: 'var(--color-neutral-50)',
+          100: 'var(--color-neutral-100)',
+          200: 'var(--color-neutral-200)',
+          300: 'var(--color-neutral-300)',
+          400: 'var(--color-neutral-400)',
+          500: 'var(--color-neutral-500)',
+          600: 'var(--color-neutral-600)',
+          700: 'var(--color-neutral-700)',
+          800: 'var(--color-neutral-800)',
+          900: 'var(--color-neutral-900)',
+        },
       },
       typography: {
         DEFAULT: {
           css: {
-            maxWidth: '100ch',
-            color: 'inherit',
+            maxWidth: '65ch',
+            color: 'var(--color-neutral-800)',
             a: {
-              color: 'inherit',
+              color: 'var(--color-primary-600)',
               '&:hover': {
-                color: '#2563eb',
+                color: 'var(--color-primary-700)',
               },
             },
-            '[class~="lead"]': {
-              color: 'inherit',
-            },
-            strong: {
-              color: 'inherit',
-            },
-            'ol[type="A"]': {
-              '--list-counter-style': 'upper-alpha',
-            },
-            'ol[type="a"]': {
-              '--list-counter-style': 'lower-alpha',
-            },
-            'ol[type="A" s]': {
-              '--list-counter-style': 'upper-alpha',
-            },
-            'ol[type="a" s]': {
-              '--list-counter-style': 'lower-alpha',
-            },
-            'ol[type="I"]': {
-              '--list-counter-style': 'upper-roman',
-            },
-            'ol[type="i"]': {
-              '--list-counter-style': 'lower-roman',
-            },
-            'ol[type="I" s]': {
-              '--list-counter-style': 'upper-roman',
-            },
-            'ol[type="i" s]': {
-              '--list-counter-style': 'lower-roman',
-            },
-            'ol[type="1"]': {
-              '--list-counter-style': 'decimal',
-            },
             h1: {
-              color: 'inherit',
+              color: 'var(--color-neutral-900)',
             },
             h2: {
-              color: 'inherit',
+              color: 'var(--color-neutral-900)',
             },
             h3: {
-              color: 'inherit',
+              color: 'var(--color-neutral-900)',
             },
             h4: {
-              color: 'inherit',
+              color: 'var(--color-neutral-900)',
+            },
+            strong: {
+              color: 'var(--color-neutral-900)',
+            },
+            blockquote: {
+              color: 'var(--color-neutral-700)',
+              borderLeftColor: 'var(--color-primary-500)',
             },
             code: {
-              color: 'inherit',
+              color: 'var(--color-neutral-900)',
             },
-            'pre code': {
-              color: 'inherit',
-              fontSize: '1em',
+            figcaption: {
+              color: 'var(--color-neutral-500)',
             },
-            thead: {
-              color: 'inherit',
-            },
+            // Additional typography styles can remain the same
           },
         },
       },

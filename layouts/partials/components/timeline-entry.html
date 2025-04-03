@@ -1,33 +1,38 @@
 {{ $entry := . }}
-<div class="relative pl-8 pb-8">
+<div class="relative pl-8 pb-8 group">
     <!-- Timeline line -->
-    <div class="absolute left-0 top-0 h-full w-px bg-gray-200 dark:bg-gray-700"></div>
+    <div class="absolute left-0 top-0 h-full w-px bg-neutral-200 dark:bg-neutral-700"></div>
     
     <!-- Timeline dot -->
-    <div class="absolute left-0 top-0 w-2 h-2 -ml-1 rounded-full bg-primary"></div>
+    <div class="absolute left-0 top-0 w-3 h-3 -ml-1.5 rounded-full bg-primary-500 ring-4 ring-white dark:ring-neutral-900 group-hover:scale-125 transition-transform duration-200"></div>
     
     <!-- Content -->
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
+    <div class="bg-white dark:bg-neutral-800 rounded-lg border border-neutral-100 dark:border-neutral-700 shadow-sm p-6 hover:shadow-md transition-all duration-200 group-hover:border-primary-400 dark:group-hover:border-primary-700">
         <div class="flex flex-col md:flex-row md:items-start justify-between mb-4">
             <div>
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">{{ .title }}</h3>
+                <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-50">{{ .title }}</h3>
                 {{ with .subtitle }}
-                <p class="text-gray-600 dark:text-gray-300">{{ . }}</p>
+                <p class="text-neutral-600 dark:text-neutral-300">{{ . }}</p>
                 {{ end }}
             </div>
             {{ with .date }}
-            <p class="text-gray-500 dark:text-gray-400 md:text-right">{{ . }}</p>
+            <div class="badge badge-primary mt-2 md:mt-0">{{ . }}</div>
             {{ end }}
         </div>
         {{ with .content }}
-        <div class="text-gray-700 dark:text-gray-300">
+        <div class="text-neutral-700 dark:text-neutral-300 prose prose-sm dark:prose-invert">
             {{ . | markdownify }}
         </div>
         {{ end }}
         {{ with .list }}
-        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2 mt-4">
+        <ul class="mt-4 space-y-2">
             {{ range . }}
-            <li>{{ . }}</li>
+            <li class="flex items-start">
+                <svg class="w-5 h-5 text-primary-500 mr-2 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-neutral-700 dark:text-neutral-300">{{ . }}</span>
+            </li>
             {{ end }}
         </ul>
         {{ end }}
