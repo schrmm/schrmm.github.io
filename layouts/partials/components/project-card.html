@@ -1,0 +1,41 @@
+{{ $project := . }}
+<article class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+    {{ with $project.Params.image }}
+    <div class="aspect-w-16 aspect-h-9">
+        <img src="{{ . }}" 
+             alt="{{ $project.Title }}"
+             class="object-cover w-full h-full"
+             loading="lazy">
+    </div>
+    {{ end }}
+    
+    <div class="p-6">
+        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+            <a href="{{ $project.RelPermalink }}" class="hover:text-primary dark:hover:text-primary-light">
+                {{ $project.Title }}
+            </a>
+        </h3>
+        
+        {{ with $project.Description }}
+        <p class="text-gray-600 dark:text-gray-300 mb-4">{{ . }}</p>
+        {{ end }}
+        
+        {{ with $project.Params.tech_stack }}
+        <div class="flex flex-wrap gap-2 mb-4">
+            {{ range . }}
+            <span class="px-2 py-1 text-sm bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded">
+                {{ . }}
+            </span>
+            {{ end }}
+        </div>
+        {{ end }}
+        
+        <a href="{{ $project.RelPermalink }}" 
+           class="inline-flex items-center text-primary dark:text-primary-light hover:text-primary-dark dark:hover:text-primary-light-dark">
+            Learn more
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+        </a>
+    </div>
+</article>

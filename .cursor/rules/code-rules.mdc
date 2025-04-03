@@ -1,0 +1,51 @@
+---
+description: This rule set helps after initiating a new chat
+globs: 
+alwaysApply: false
+---
+# Project rules
+- Never switch technologys if we run into multiple sequential errors due to a decided technology
+- Data used for content is creation is stored in /data and json files
+- New content will be stored in NC.md
+
+## Technology Stack
+### Core Technologies
+- Hugo: Static site generator
+- TailwindCSS: Styling framework
+- Conda (webdesign environment)
+- SQLite: Database management
+- Git/GitHub: Version control
+- GitHub Actions: CI/CD
+- GitHub Pages: Hosting
+
+## Agent Roles and Role-Specific git Workflows
+These roles very often have to work together
+
+### Frontend Developer
+- Focus on component-based branches
+- Include design assets and screenshots in PRs
+- Coordinate with designers on visual reviews
+
+### Framework Specialist
+- Handle template system changes
+- Manage dependency updates
+- Document breaking changes clearly
+
+### Content Manager
+- Use content branches for pure content updates
+- Coordinate with technical team for structural changes
+- Include previews in pull requests
+
+### DevOps Engineer
+- Manage CI/CD pipeline configurations
+- Review deployment-related changes
+- Handle infrastructure as code updates
+
+### Specialized Considerations
+
+- **Frontend Developer & Designer**: Work in `feature/*` branches for UI changes
+- **Hugo Specialist**: Handles `feature/hugo-*` branches for template changes
+- **Content Manager**: Works in `content/*` branches for text/media updates
+- **DevOps Engineer**: Manages workflow configurations in `feature/ci-*` branches
+- **SEO Specialist**: Creates `feature/seo-*` branches for optimization work
+

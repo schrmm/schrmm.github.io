@@ -1,94 +1,84 @@
+{{ define "hero" }}
+<div class="bg-gradient-to-r from-primary/5 to-secondary/5 dark:from-primary/10 dark:to-secondary/10">
+    <div class="container mx-auto px-4 py-16 md:py-24">
+        <div class="max-w-3xl">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+                {{ with .Site.Data.portfolio.profile.name }}{{ . }}{{ end }}
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
+                {{ with .Site.Data.portfolio.profile.bio }}{{ . }}{{ end }}
+            </p>
+            <div class="flex space-x-4">
+                <a href="#projects" 
+                   class="inline-flex items-center px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors duration-200">
+                    View Projects
+                </a>
+                <a href="/resume" 
+                   class="inline-flex items-center px-6 py-3 bg-white dark:bg-gray-800 text-primary dark:text-primary-light rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
+                    Resume
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}
+
 {{ define "main" }}
-{{ $portfolio := index .Site.Data "portfolio" }}
-
-<!-- Hero Section -->
-<section class="py-5 bg-primary-gradient text-white">
-    <div class="container text-center py-5">
-        <h1 class="display-4 fw-bold mb-3">{{ $portfolio.profile.name }}</h1>
-        <p class="lead mx-auto mb-4" style="max-width: 700px;">{{ $portfolio.profile.bio }}</p>
-        <div class="d-flex justify-content-center gap-3">
-            <a href="/projects/" class="btn btn-light text-primary shadow">View Projects</a>
-            <a href="/resume/" class="btn btn-outline-light">View Resume</a>
-        </div>
-    </div>
-</section>
-
 <!-- Skills Section -->
-<section id="skills" class="py-5 bg-white">
-    <div class="container">
-        <h2 class="text-center fw-bold mb-4">Skills</h2>
-        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4 mt-3">
-            {{ range $portfolio.skills }}
-            <div class="col">
-                <div class="bg-light p-3 rounded shadow-sm text-center">
-                    {{ . }}
-                </div>
-            </div>
+<section class="mb-16">
+    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Skills & Expertise</h2>
+    {{ partial "components/skills-list.html" .Site.Data.portfolio.skills }}
+</section>
+
+<!-- Featured Projects -->
+<section id="projects" class="mb-16">
+    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Featured Projects</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {{ range where .Site.RegularPages "Type" "projects" }}
+            {{ if .Params.featured }}
+                {{ partial "components/project-card.html" . }}
             {{ end }}
-        </div>
+        {{ end }}
+    </div>
+    <div class="mt-8 text-center">
+        <a href="/projects" 
+           class="inline-flex items-center px-6 py-3 bg-white dark:bg-gray-800 text-primary dark:text-primary-light rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
+            View All Projects
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+        </a>
     </div>
 </section>
 
-<!-- Featured Projects Section -->
-<section id="featured-projects" class="py-5 bg-light">
-    <div class="container">
-        <h2 class="text-center fw-bold mb-4">Featured Projects</h2>
-        <div class="row row-cols-1 row-cols-md-2 g-4 mt-3">
-            {{ range where $portfolio.projects "featured" true }}
-            <div class="col">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body">
-                        <h3 class="card-title">{{ .name }}</h3>
-                        <p class="card-text text-muted">{{ .description }}</p>
-                        {{ if .url }}
-                        <a href="{{ .url }}" class="text-primary text-decoration-none">View Project →</a>
-                        {{ end }}
-                    </div>
-                </div>
+<!-- Qualifications -->
+{{ with .Site.Data.portfolio.qualifications }}
+<section class="mb-16">
+    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Qualifications</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {{ range . }}
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
+            <p class="text-lg text-gray-900 dark:text-white">{{ . }}</p>
+        </div>
+        {{ end }}
+    </div>
+</section>
+{{ end }}
+
+<!-- Unique Skills -->
+{{ with .Site.Data.portfolio.unique_skills }}
+<section>
+    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Unique Skills</h2>
+    <div class="grid grid-cols-1 gap-6">
+        {{ range . }}
+            {{ range $key, $value := . }}
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">{{ $key }}</h3>
+                <p class="text-gray-600 dark:text-gray-300">{{ $value }}</p>
             </div>
             {{ end }}
-        </div>
-        <div class="text-center mt-4">
-            <a href="/projects/" class="btn btn-primary shadow">View All Projects</a>
-        </div>
+        {{ end }}
     </div>
 </section>
-
-<!-- About Section -->
-<section id="about" class="py-5 bg-white">
-    <div class="container">
-        <h2 class="text-center fw-bold mb-4">About Me</h2>
-        <div class="row">
-            <div class="col-md-8 pe-md-4">
-                <p class="text-muted mb-3">{{ $portfolio.profile.bio }}</p>
-                <p class="text-muted">Based in {{ $portfolio.profile.location }}</p>
-                
-                <!-- Content from the main page -->
-                <div class="mt-4">
-                    {{ .Content }}
-                </div>
-            </div>
-            <div class="col-md-4 mt-4 mt-md-0">
-                <div class="card shadow-sm">
-                    <div class="card-body">
-                        <h3 class="card-title mb-3">Details</h3>
-                        <div class="mb-3">
-                            <div class="text-muted small">Location</div>
-                            <div>{{ $portfolio.profile.location }}</div>
-                        </div>
-                        <div class="mb-3">
-                            <div class="text-muted small">Email</div>
-                            <div>{{ $portfolio.profile.email }}</div>
-                        </div>
-                        <div class="d-flex gap-3 mt-4">
-                            {{ range $platform, $url := $portfolio.social_links }}
-                            <a href="{{ $url }}" class="text-primary text-decoration-none">{{ $platform }}</a>
-                            {{ end }}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-{{ end }} 
+{{ end }}
+{{ end }}

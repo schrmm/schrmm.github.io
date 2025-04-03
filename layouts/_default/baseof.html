@@ -1,13 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ .Site.LanguageCode | default "en" }}">
 <head>
-    {{ partial "head.html" . }}
+    {{ block "head" . }}
+        {{ partial "head.html" . }}
+        {{ block "styles" . }}{{ end }}
+    {{ end }}
 </head>
-<body class="min-h-screen flex flex-col">
-    {{ partial "header.html" . }}
+<body class="min-h-screen flex flex-col bg-white dark:bg-gray-900">
+    {{ block "header" . }}
+        {{ partial "header.html" . }}
+    {{ end }}
+
     <main class="flex-grow">
-        {{ block "main" . }}{{ end }}
+        {{ block "hero" . }}{{ end }}
+        
+        <div class="container mx-auto px-4 py-8">
+            {{ block "main" . }}{{ end }}
+        </div>
     </main>
-    {{ partial "footer.html" . }}
+
+    {{ block "footer" . }}
+        {{ partial "footer.html" . }}
+    {{ end }}
+
+    {{ block "scripts" . }}
+        {{ partial "scripts.html" . }}
+    {{ end }}
 </body>
 </html>

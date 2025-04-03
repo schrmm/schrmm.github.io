@@ -1,0 +1,133 @@
+{{ define "main" }}
+<div class="max-w-7xl mx-auto">
+    <!-- Blog Header -->
+    <header class="mb-12">
+        <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">Blog</h1>
+        <p class="text-xl text-gray-600 dark:text-gray-300">Insights, tutorials, and updates from my journey.</p>
+    </header>
+
+    <!-- Category/Tag Filter -->
+    <div class="mb-8" x-data="{ activeFilter: 'all' }">
+        <div class="flex flex-wrap gap-4">
+            <button 
+                @click="activeFilter = 'all'"
+                :class="{ 'bg-primary text-white': activeFilter === 'all', 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300': activeFilter !== 'all' }"
+                class="px-4 py-2 rounded-lg transition-colors duration-200">
+                All Posts
+            </button>
+            {{ $categories := slice }}
+            {{ range .Pages }}
+                {{ range .Params.categories }}
+                    {{ $categories = $categories | append . }}
+                {{ end }}
+            {{ end }}
+            {{ range ($categories | uniq) }}
+            <button 
+                @click="activeFilter = '{{ . }}'"
+                :class="{ 'bg-primary text-white': activeFilter === '{{ . }}', 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300': activeFilter !== '{{ . }}' }"
+                class="px-4 py-2 rounded-lg transition-colors duration-200">
+                {{ . }}
+            </button>
+            {{ end }}
+        </div>
+    </div>
+
+    <!-- Featured Posts -->
+    {{ $featured := where .Pages "Params.featured" true }}
+    {{ if $featured }}
+    <section class="mb-16">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">Featured Posts</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {{ range first 2 $featured }}
+            <article class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+                {{ with .Params.featured_image }}
+                <div class="aspect-w-16 aspect-h-9">
+                    <img src="{{ . }}" alt="{{ $.Title }}" class="object-cover">
+                </div>
+                {{ end }}
+                <div class="p-6">
+                    <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-2">
+                        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+                        {{ with .Params.categories }}
+                        <span class="mx-2">•</span>
+                        <span>{{ delimit . ", " }}</span>
+                        {{ end }}
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                        <a href="{{ .RelPermalink }}" class="hover:text-primary dark:hover:text-primary-light">
+                            {{ .Title }}
+                        </a>
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">{{ .Description }}</p>
+                    <a href="{{ .RelPermalink }}" 
+                       class="inline-flex items-center text-primary dark:text-primary-light hover:text-primary-dark">
+                        Read more
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+            {{ end }}
+        </div>
+    </section>
+    {{ end }}
+
+    <!-- All Posts -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {{ range .Pages }}
+        <article 
+            x-show="activeFilter === 'all' || {{ .Params.categories | jsonify }}.includes(activeFilter)"
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 transform scale-95"
+            x-transition:enter-end="opacity-100 transform scale-100"
+            x-transition:leave="transition ease-in duration-200"
+            x-transition:leave-start="opacity-100 transform scale-100"
+            x-transition:leave-end="opacity-0 transform scale-95"
+            class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+            {{ with .Params.featured_image }}
+            <div class="aspect-w-16 aspect-h-9">
+                <img src="{{ . }}" alt="{{ $.Title }}" class="object-cover">
+            </div>
+            {{ end }}
+            <div class="p-6">
+                <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-2">
+                    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+                    {{ with .Params.categories }}
+                    <span class="mx-2">•</span>
+                    <span>{{ delimit . ", " }}</span>
+                    {{ end }}
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                    <a href="{{ .RelPermalink }}" class="hover:text-primary dark:hover:text-primary-light">
+                        {{ .Title }}
+                    </a>
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-4">{{ .Description }}</p>
+                <div class="flex items-center justify-between">
+                    <a href="{{ .RelPermalink }}" 
+                       class="inline-flex items-center text-primary dark:text-primary-light hover:text-primary-dark">
+                        Read more
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    {{ with .Params.tags }}
+                    <div class="flex flex-wrap gap-2">
+                        {{ range first 2 . }}
+                        <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded">
+                            {{ . }}
+                        </span>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+        </article>
+        {{ end }}
+    </div>
+
+    <!-- Pagination -->
+    {{ template "_internal/pagination.html" . }}
+</div>
+{{ end }}

@@ -1,31 +1,128 @@
 baseURL = "https://schrmm.github.io/"
 languageCode = "en-us"
-title = "Portfolio"
+title = "Chris Schramm - Portfolio"
 enableRobotsTXT = true
+enableGitInfo = true
+enableEmoji = true
+
+# Theme settings
+theme = "custom"
+
+# Taxonomies
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  skill = "skills"
 
 # Site parameters
 [params]
-  author = "Jane Doe"
-  description = "Personal portfolio site powered by Hugo"
+  description = "Personal portfolio and blog of Chris Schramm - Software Developer and Tech Enthusiast"
+  author = "Chris Schramm"
+  email = "your.email@example.com" # Replace with your email
+  github = "https://github.com/schrmm"
+  linkedin = "https://linkedin.com/in/your-profile" # Replace with your LinkedIn
+  author_bio = "Software developer passionate about creating efficient, scalable solutions and sharing knowledge through writing and open source contributions."
   
-  [params.social]
-    github = "https://github.com/schrmm"
-    linkedin = "https://linkedin.com/in/janedoe"
+  # SEO
+  images = ["images/og-image.jpg"]
+  keywords = ["software development", "web development", "portfolio", "blog"]
+  
+  # Theme
+  mainSections = ["blog", "projects", "case-studies"]
+  colorScheme = "system" # system, light, or dark
+  accentColor = "#2563eb"
+  
+  # Content
+  dateFormat = "January 2, 2006"
+  showReadingTime = true
+  showWordCount = true
+  showLastMod = true
+  
+  # Features
+  enableSearch = false
+  enableDarkMode = true
+  enableToc = true
+  
+  # Comments (optional)
+  # disqusShortname = ""
+  
+  # Analytics (optional)
+  # googleAnalytics = ""
 
-# Menu items
+# Menu
 [menu]
   [[menu.main]]
-    identifier = "home"
     name = "Home"
     url = "/"
     weight = 1
   [[menu.main]]
-    identifier = "projects"
     name = "Projects"
     url = "/projects/"
     weight = 2
   [[menu.main]]
-    identifier = "resume"
+    name = "Blog"
+    url = "/blog/"
+    weight = 3
+  [[menu.main]]
+    name = "Case Studies"
+    url = "/case-studies/"
+    weight = 4
+  [[menu.main]]
     name = "Resume"
     url = "/resume/"
-    weight = 3
+    weight = 5
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 6
+
+# Privacy
+[privacy]
+  [privacy.disqus]
+    disable = true
+  [privacy.googleAnalytics]
+    disable = true
+  [privacy.instagram]
+    disable = true
+  [privacy.twitter]
+    disable = true
+  [privacy.vimeo]
+    disable = true
+  [privacy.youtube]
+    disable = true
+
+# Output formats
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS"]
+
+# Markup
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = true
+    lineNumbersInTable = true
+    noClasses = false
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+# Build
+[build]
+  writeStats = true
+
+# Module configuration for theme
+[module]
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+  [[module.mounts]]
+    source = "layouts"
+    target = "layouts"
+  [[module.mounts]]
+    source = "content"
+    target = "content"

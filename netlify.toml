@@ -1,0 +1,35 @@
+[build]
+  publish = "public"
+  command = "hugo --gc --minify"
+
+[build.environment]
+  HUGO_VERSION = "0.123.0"
+  HUGO_ENVIRONMENT = "production"
+  HUGO_ENV = "production"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data: https:; connect-src 'self' https:;"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+
+# Redirects and rewrites
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+
+# Environment-specific settings
+[context.production]
+  command = "hugo --gc --minify"
+
+[context.deploy-preview]
+  command = "hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL"
+
+[context.branch-deploy]
+  command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"

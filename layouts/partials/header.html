@@ -1,14 +1,61 @@
-<nav class="bg-white shadow-md">
-    <div class="max-w-6xl mx-auto px-4">
-        <div class="flex justify-between">
-            <div class="flex py-3">
-                <a href="/" class="font-bold text-xl text-primary">{{ .Site.Params.author }}</a>
-            </div>
-            <div class="hidden md:flex items-center space-x-6">
+<header class="bg-white dark:bg-gray-900 shadow-sm" x-data="{ isOpen: false }">
+    <nav class="container mx-auto px-4 py-4">
+        <div class="flex justify-between items-center">
+            <!-- Logo/Site Title -->
+            <a href="/" class="text-xl font-bold text-gray-900 dark:text-white">
+                {{ .Site.Title }}
+            </a>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-8">
+                {{ $currentPage := . }}
                 {{ range .Site.Menus.main }}
-                <a href="{{ .URL }}" class="py-2 text-gray-700 hover:text-primary">{{ .Name }}</a>
+                <a href="{{ .URL }}" 
+                   class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light {{ if $currentPage.IsMenuCurrent "main" . }}text-primary dark:text-primary-light font-semibold{{ end }}">
+                    {{ .Name }}
+                </a>
                 {{ end }}
+                
+                <!-- Theme Toggle -->
+                <button 
+                    @click="isDark = !isDark; localStorage.theme = isDark ? 'dark' : 'light'"
+                    class="p-2 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light"
+                    x-data="{ isDark: localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches) }"
+                    @click="isDark = !isDark; localStorage.theme = isDark ? 'dark' : 'light'; if (isDark) { document.documentElement.classList.add('dark') } else { document.documentElement.classList.remove('dark') }">
+                    <span x-show="!isDark" class="w-5 h-5">🌞</span>
+                    <span x-show="isDark" class="w-5 h-5">🌙</span>
+                </button>
             </div>
+
+            <!-- Mobile Menu Button -->
+            <button 
+                @click="isOpen = !isOpen" 
+                class="md:hidden text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary-light">
+                <svg class="h-6 w-6" x-show="!isOpen" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+                <svg class="h-6 w-6" x-show="isOpen" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
         </div>
-    </div>
-</nav>
+
+        <!-- Mobile Navigation -->
+        <div 
+            x-show="isOpen" 
+            x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="opacity-0 -translate-y-2"
+            x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:leave="transition ease-in duration-150"
+            x-transition:leave-start="opacity-100 translate-y-0"
+            x-transition:leave-end="opacity-0 -translate-y-2"
+            class="md:hidden mt-4 space-y-4">
+            {{ range .Site.Menus.main }}
+            <a href="{{ .URL }}" 
+               class="block text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light {{ if $currentPage.IsMenuCurrent "main" . }}text-primary dark:text-primary-light font-semibold{{ end }}">
+                {{ .Name }}
+            </a>
+            {{ end }}
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Custom base styles */
+  body {
+    @apply antialiased text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-900;
+  }
+
+  /* Typography */
+  h1 {
+    @apply text-4xl font-bold mb-4;
+  }
+  h2 {
+    @apply text-3xl font-bold mb-3;
+  }
+  h3 {
+    @apply text-2xl font-bold mb-2;
+  }
+  h4 {
+    @apply text-xl font-semibold mb-2;
+  }
+  p {
+    @apply mb-4;
+  }
+}
+
+@layer components {
+  /* Button styles */
+  .btn {
+    @apply inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium transition-colors duration-200;
+  }
+  .btn-primary {
+    @apply btn bg-primary text-white hover:bg-primary-dark dark:bg-primary-light dark:hover:bg-primary-light-dark;
+  }
+  .btn-secondary {
+    @apply btn bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600;
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-shadow duration-200 hover:shadow-lg;
+  }
+
+  /* Form styles */
+  .form-input {
+    @apply block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 dark:bg-gray-700 dark:text-white;
+  }
+  .form-label {
+    @apply block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1;
+  }
+
+  /* Navigation styles */
+  .nav-link {
+    @apply text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary-light transition-colors duration-200;
+  }
+  .nav-link-active {
+    @apply text-primary dark:text-primary-light font-medium;
+  }
+}
+
+@layer utilities {
+  /* Custom utilities */
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .text-shadow-none {
+    text-shadow: none;
+  }
+}

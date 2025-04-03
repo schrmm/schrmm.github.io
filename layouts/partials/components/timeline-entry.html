@@ -1,0 +1,35 @@
+{{ $entry := . }}
+<div class="relative pl-8 pb-8">
+    <!-- Timeline line -->
+    <div class="absolute left-0 top-0 h-full w-px bg-gray-200 dark:bg-gray-700"></div>
+    
+    <!-- Timeline dot -->
+    <div class="absolute left-0 top-0 w-2 h-2 -ml-1 rounded-full bg-primary"></div>
+    
+    <!-- Content -->
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6">
+        <div class="flex flex-col md:flex-row md:items-start justify-between mb-4">
+            <div>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">{{ .title }}</h3>
+                {{ with .subtitle }}
+                <p class="text-gray-600 dark:text-gray-300">{{ . }}</p>
+                {{ end }}
+            </div>
+            {{ with .date }}
+            <p class="text-gray-500 dark:text-gray-400 md:text-right">{{ . }}</p>
+            {{ end }}
+        </div>
+        {{ with .content }}
+        <div class="text-gray-700 dark:text-gray-300">
+            {{ . | markdownify }}
+        </div>
+        {{ end }}
+        {{ with .list }}
+        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2 mt-4">
+            {{ range . }}
+            <li>{{ . }}</li>
+            {{ end }}
+        </ul>
+        {{ end }}
+    </div>
+</div>
