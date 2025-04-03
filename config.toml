@@ -23,6 +23,9 @@ theme = "custom"
   linkedin = "https://linkedin.com/in/chrisschramm" # Updated LinkedIn
   author_bio = "Software developer passionate about creating efficient, scalable solutions and sharing knowledge through writing and open source contributions."
   
+  # Form handling
+  contact_form_endpoint = "https://formspree.io/f/your-form-id"
+  
   # SEO
   images = ["images/og-image.jpg"]
   keywords = ["software development", "web development", "portfolio", "blog"]
