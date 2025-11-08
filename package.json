@@ -2,12 +2,43 @@
   "name": "schrmm-portfolio",
   "version": "1.0.0",
   "description": "Personal portfolio website built with Hugo and TailwindCSS",
+  "author": "Chris Schramm <contact@chrisschramm.dev>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/schrmm/schrmm.github.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/schrmm/schrmm.github.io/issues"
+  },
+  "homepage": "https://schrmm.github.io",
+  "keywords": [
+    "portfolio",
+    "hugo",
+    "tailwindcss",
+    "blog",
+    "static-site",
+    "personal-website"
+  ],
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
   "scripts": {
     "dev": "hugo server -D",
+    "dev:watch": "hugo server -D --disableFastRender",
     "build": "hugo --gc --minify",
+    "build:css": "npx tailwindcss -i assets/css/main.css -o static/css/style.css --minify",
+    "build:draft": "hugo --gc --minify --buildDrafts",
     "clean": "rimraf public resources",
-    "test": "echo \"No tests specified\"",
-    "build-css": "npx tailwindcss -i assets/css/main.css -o static/css/style.css"
+    "clean:all": "rimraf public resources node_modules package-lock.json",
+    "format": "prettier --write \"**/*.{html,css,js,json,md,yml,yaml}\"",
+    "format:check": "prettier --check \"**/*.{html,css,js,json,md,yml,yaml}\"",
+    "lint:css": "stylelint \"assets/css/**/*.css\"",
+    "lint:md": "markdownlint \"content/**/*.md\" \"*.md\" --ignore node_modules",
+    "validate": "npm run format:check && npm run lint:css",
+    "serve": "hugo server",
+    "prebuild": "npm run clean"
   },
   "dependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.2",
@@ -22,6 +53,10 @@
     "tailwindcss": "^3.4.1"
   },
   "devDependencies": {
-    "rimraf": "^5.0.5"
+    "prettier": "^3.2.5",
+    "rimraf": "^5.0.5",
+    "stylelint": "^16.2.1",
+    "stylelint-config-standard": "^36.0.0",
+    "markdownlint-cli": "^0.39.0"
   }
 }

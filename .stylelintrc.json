@@ -1,0 +1,34 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "tailwind",
+          "apply",
+          "variants",
+          "responsive",
+          "screen",
+          "layer"
+        ]
+      }
+    ],
+    "declaration-block-trailing-semicolon": null,
+    "no-descending-specificity": null,
+    "selector-class-pattern": null,
+    "value-keyword-case": null,
+    "function-no-unknown": [
+      true,
+      {
+        "ignoreFunctions": ["theme"]
+      }
+    ]
+  },
+  "ignoreFiles": [
+    "public/**/*",
+    "resources/**/*",
+    "static/css/style.css",
+    "node_modules/**/*"
+  ]
+}
