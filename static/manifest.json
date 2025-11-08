@@ -1,0 +1,22 @@
+{
+  "name": "Chris Schramm - Portfolio",
+  "short_name": "CS Portfolio",
+  "description": "Personal portfolio and blog of Chris Schramm - Software Developer and Tech Enthusiast",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0d9488",
+  "orientation": "portrait-primary",
+  "categories": ["portfolio", "blog", "technology"],
+  "lang": "en-US",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
