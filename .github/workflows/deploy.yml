@@ -48,6 +48,9 @@ jobs:
       - name: Install Node.js dependencies
         run: |
           npm install
+      - name: Build CSS
+        run: |
+          npm run build-css
       - name: Build with Hugo
         env:
           # For maximum backward compatibility with Hugo modules
@@ -55,13 +58,15 @@ jobs:
           HUGO_ENV: production
         run: |
           hugo \
+            --source exampleSite \
+            --themesDir ../themes \
             --gc \
             --minify \
             --baseURL "https://schrmm.github.io/"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./public
+          path: ./exampleSite/public
 
   # Deployment job
   deploy:

@@ -1,6 +1,6 @@
-# Personal Portfolio Website
+# Portfolio Generator
 
-A modern, responsive personal portfolio website built with Hugo and TailwindCSS. This site showcases projects, blog posts, case studies, and professional experience with a thoughtfully implemented design system.
+A Hugo and TailwindCSS portfolio generator for developers and creatives. The reusable generator lives in `themes/portfolio-generator`, while `exampleSite` is a personal demo site that can be deployed to GitHub Pages.
 
 ## Features
 
@@ -45,15 +45,16 @@ The site implements a comprehensive design system featuring:
    ```
 
 3. **Development**
-   ```bash
-   # Start development server
-   hugo server -D
-   ```
+    ```bash
+    # Start the example site development server
+    npm run dev
+    ```
 
 4. **Production Build**
-   ```bash
-   # Build for production
-   hugo --gc --minify
+    ```bash
+    # Build CSS and the example site
+    npm run build-css
+    npm run build
    ```
 
 ## Documentation
@@ -71,21 +72,17 @@ Detailed documentation is available in the `/docs` directory:
 
 ```
 schrmm.github.io/
-├── archetypes/          # Content templates
-├── assets/              # Asset files processed by Hugo
-│   ├── css/             # CSS files
-│   │   └── main.css     # Main stylesheet with all styles
-├── content/            # Site content
-├── data/               # Hugo data files
+├── exampleSite/         # Demo/personal site using the generator
+│   ├── config.toml      # Example site configuration
+│   ├── content/         # Example Markdown content
+│   ├── data/            # Example portfolio data
+│   └── static/          # Generated CSS and static assets for the demo
 ├── docs/               # Documentation
-├── layouts/            # Hugo templates
-│   ├── _default/       # Default templates
-│   ├── partials/       # Partial templates
-│   │   ├── components/ # Reusable UI components
-├── static/             # Static files
 ├── themes/             # Hugo themes
-│   └── custom/         # Custom theme files
-├── config.toml         # Hugo configuration
+│   └── portfolio-generator/
+│       ├── archetypes/  # Content templates
+│       ├── assets/      # Tailwind source CSS
+│       └── layouts/     # Reusable generator templates
 ├── tailwind.config.js  # TailwindCSS configuration
 └── package.json        # Node.js dependencies
 ```

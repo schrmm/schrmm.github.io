@@ -21,7 +21,8 @@ on:
 ### Manual Deployment
 ```bash
 # Build site
-hugo --gc --minify
+npm run build-css
+npm run build
 
 # Deploy using gh-pages branch
 git checkout gh-pages
@@ -34,14 +35,14 @@ git push origin gh-pages
 
 ### Production Settings
 ```toml
-# config.toml
+# exampleSite/config.toml
 baseURL = "https://schrmm.github.io/"
 environment = "production"
 ```
 
 ### Development Settings
 ```toml
-# config.development.toml
+# exampleSite/config.development.toml
 baseURL = "http://localhost:1313/"
 environment = "development"
 ```

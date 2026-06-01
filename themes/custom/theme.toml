@@ -1,8 +1,0 @@
-name = "Custom"
-license = "MIT"
-description = "A custom theme for portfolio"
-min_version = "0.41.0"
-
-[author]
-  name = "Chris Schramm"
-  homepage = "https://schrmm.github.io"

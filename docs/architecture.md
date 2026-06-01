@@ -11,7 +11,7 @@
 
 ### Content Organization
 ```
-content/
+exampleSite/content/
 ├── _index.md          # Home page content
 ├── blog/              # Blog posts
 ├── projects/          # Project showcases
@@ -22,7 +22,7 @@ content/
 
 ### Template Structure
 ```
-layouts/
+themes/portfolio-generator/layouts/
 ├── _default/         # Base templates
 ├── partials/         # Reusable components
 │   ├── components/   # UI components
@@ -35,9 +35,13 @@ layouts/
 
 ### CSS Structure
 ```
-assets/
+themes/portfolio-generator/assets/
 ├── css/
 │   └── main.css       # Main stylesheet with all styles
+
+exampleSite/static/
+├── css/
+│   └── style.css      # Generated Tailwind output served by the demo site
 ```
 
 ## Design System Architecture
@@ -100,10 +104,9 @@ assets/
 ## Build Process
 
 ### Development
-1. Hugo development server
-2. TailwindCSS JIT compilation
-3. PostCSS processing
-4. Alpine.js for interactive elements
+1. TailwindCSS compiles theme CSS into `exampleSite/static/css/style.css`
+2. Hugo serves `exampleSite` with `themes/portfolio-generator`
+3. Alpine.js powers lightweight interactive elements
 
 ### Production
 1. Content processing

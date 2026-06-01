@@ -48,11 +48,11 @@ featured_image: "/images/case-studies/image.jpg"
 ## Content Organization
 
 ### Directory Structure
-- `/content/blog/` - Blog posts
-- `/content/projects/` - Project showcases
-- `/content/case-studies/` - Case studies
-- `/content/resume/` - Resume sections
-- `/static/images/` - Image assets
+- `exampleSite/content/blog/` - Blog posts
+- `exampleSite/content/projects/` - Project showcases
+- `exampleSite/content/case-studies/` - Case studies
+- `exampleSite/content/resume.md` - Resume page
+- `exampleSite/static/images/` - Image assets
 
 ### Image Guidelines
 - Blog images: 1200x630px (16:9)
@@ -103,13 +103,13 @@ featured_image: "/images/case-studies/image.jpg"
 ### Using Archetypes
 ```bash
 # Create new blog post
-hugo new blog/post-name.md
+hugo --source exampleSite --themesDir ../themes new blog/post-name.md
 
 # Create new project
-hugo new projects/project-name.md
+hugo --source exampleSite --themesDir ../themes new projects/project-name.md
 
 # Create new case study
-hugo new case-studies/case-study-name.md
+hugo --source exampleSite --themesDir ../themes new case-studies/case-study-name.md
 ```
 
 ### Image Management

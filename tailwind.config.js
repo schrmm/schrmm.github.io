@@ -1,9 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./layouts/**/*.html",
-    "./content/**/*.{html,md}",
-    "./themes/**/layouts/**/*.html",
+    "./themes/portfolio-generator/layouts/**/*.html",
+    "./exampleSite/content/**/*.{html,md}",
+    "./exampleSite/layouts/**/*.html",
   ],
   darkMode: 'class', // Enable dark mode with class-based switching
   theme: {

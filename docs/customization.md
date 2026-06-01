@@ -113,7 +113,7 @@ The design system provides pre-styled components that can be customized while ma
 Modify button styles by extending the base button classes:
 
 ```css
-/* assets/css/components/buttons.css */
+/* themes/portfolio-generator/assets/css/components/buttons.css */
 @layer components {
   .btn {
     @apply inline-flex items-center justify-center px-6 py-3 rounded-md font-medium transition-all;
@@ -147,7 +147,7 @@ Modify button styles by extending the base button classes:
 Customize cards while preserving the design system's spacing and colors:
 
 ```css
-/* assets/css/components/cards.css */
+/* themes/portfolio-generator/assets/css/components/cards.css */
 @layer components {
   .card {
     @apply bg-white dark:bg-neutral-800 rounded-lg shadow-md overflow-hidden transition-all hover:shadow-lg dark:shadow-neutral-900/30;
@@ -190,7 +190,7 @@ Customize cards while preserving the design system's spacing and colors:
 The base template can be customized while maintaining the design system's structure:
 
 ```html
-<!-- layouts/_default/baseof.html -->
+<!-- themes/portfolio-generator/layouts/_default/baseof.html -->
 <!DOCTYPE html>
 <html lang="{{ .Site.Language.Lang }}" class="scroll-smooth" x-data="{ darkMode: localStorage.getItem('darkMode') === 'true' }" x-bind:class="{ 'dark': darkMode }">
   {{ partial "head.html" . }}
@@ -208,7 +208,7 @@ The base template can be customized while maintaining the design system's struct
 Customize page sections using the spacing system:
 
 ```html
-<!-- layouts/partials/sections/featured-projects.html -->
+<!-- themes/portfolio-generator/layouts/partials/sections/featured-projects.html -->
 <section class="py-16 bg-neutral-50 dark:bg-neutral-800">
   <div class="container mx-auto px-4">
     <h2 class="section-title mb-12">Featured Projects</h2>
@@ -230,7 +230,7 @@ Customize page sections using the spacing system:
 Customize your homepage content while leveraging design system components:
 
 ```markdown
-# content/_index.md
+# exampleSite/content/_index.md
 ---
 title: "Home"
 description: "Professional portfolio showcasing my work and expertise"
@@ -265,7 +265,7 @@ sections:
 Customize project pages while maintaining design system consistency:
 
 ```html
-<!-- layouts/projects/single.html -->
+<!-- themes/portfolio-generator/layouts/projects/single.html -->
 {{ define "main" }}
 <article class="py-12">
   <div class="container mx-auto px-4">
@@ -317,7 +317,7 @@ Customize project pages while maintaining design system consistency:
 Customize the dark mode toggle while using the design system's animation system:
 
 ```html
-<!-- layouts/partials/components/dark-mode-toggle.html -->
+<!-- themes/portfolio-generator/layouts/partials/components/dark-mode-toggle.html -->
 <button 
   @click="darkMode = !darkMode; localStorage.setItem('darkMode', darkMode)"
   class="w-10 h-10 rounded-full flex items-center justify-center transition-colors dark:bg-neutral-800 bg-neutral-100 text-neutral-700 dark:text-neutral-300"
@@ -350,7 +350,7 @@ Customize the dark mode toggle while using the design system's animation system:
 Customize responsive behavior using the design system's breakpoints:
 
 ```html
-<!-- layouts/partials/components/responsive-grid.html -->
+<!-- themes/portfolio-generator/layouts/partials/components/responsive-grid.html -->
 <div class="grid grid-cols-1 gap-y-8 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-8 xl:grid-cols-4">
   {{ range .items }}
     <div class="flex flex-col h-full">
@@ -366,7 +366,7 @@ Customize responsive behavior using the design system's breakpoints:
 Add custom components that extend the design system:
 
 ```css
-/* assets/css/custom.css */
+/* themes/portfolio-generator/assets/css/custom.css */
 @layer components {
   /* Custom timeline component */
   .timeline {
@@ -441,7 +441,7 @@ document.addEventListener('DOMContentLoaded', () => {
 Create interactive components using Alpine.js:
 
 ```html
-<!-- layouts/partials/components/accordion.html -->
+<!-- themes/portfolio-generator/layouts/partials/components/accordion.html -->
 <div x-data="{ active: null }" class="space-y-4">
   {{ range $index, $item := .items }}
     <div class="border border-neutral-200 dark:border-neutral-700 rounded-lg overflow-hidden">
@@ -484,7 +484,7 @@ Create interactive components using Alpine.js:
 Optimize images while maintaining design consistency:
 
 ```html
-<!-- layouts/partials/components/optimized-image.html -->
+<!-- themes/portfolio-generator/layouts/partials/components/optimized-image.html -->
 {{ $image := resources.Get (.src | default "images/placeholder.jpg") }}
 {{ $smallw := default "500x" }}
 {{ $mediumw := default "1000x" }}

@@ -1,0 +1,110 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Chris Schramm - Portfolio"
+enableRobotsTXT = true
+enableGitInfo = true
+enableEmoji = true
+
+# Theme settings
+theme = "portfolio-generator"
+
+# Taxonomies
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  skill = "skills"
+
+# Site parameters
+[params]
+  description = "Personal portfolio and blog of Chris Schramm - Software Developer and Tech Enthusiast"
+  author = "Chris Schramm"
+  email = "contact@chrisschramm.dev" # Updated from example.com
+  github = "https://github.com/schrmm"
+  linkedin = "https://linkedin.com/in/chrisschramm"
+  author_bio = "Software developer passionate about creating efficient, scalable solutions and sharing knowledge through writing and open source contributions."
+  
+  # Form handling
+  contact_form_endpoint = "https://formspree.io/f/xyyqrpvd" # Updated from placeholder
+  
+  # SEO
+  images = ["images/og-image.jpg"]
+  keywords = ["software development", "web development", "portfolio", "blog"]
+  
+  # Theme
+  mainSections = ["blog", "projects", "case-studies"]
+  colorScheme = "light" # system, light, or dark
+  accentColor = "#2563eb"
+  
+  # Content
+  dateFormat = "January 2, 2006"
+  showReadingTime = true
+  showWordCount = true
+  showLastMod = true
+  
+  # Features
+  enableSearch = false
+  enableDarkMode = true
+  enableToc = true
+
+# Menu
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Projects"
+    url = "/projects/"
+    weight = 2
+  [[menu.main]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 3
+  [[menu.main]]
+    name = "Case Studies"
+    url = "/case-studies/"
+    weight = 4
+  [[menu.main]]
+    name = "Resume"
+    url = "/resume/"
+    weight = 5
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 6
+
+# Privacy
+[privacy]
+  [privacy.disqus]
+    disable = true
+  [privacy.googleAnalytics]
+    disable = true
+  [privacy.instagram]
+    disable = true
+  [privacy.twitter]
+    disable = true
+  [privacy.vimeo]
+    disable = true
+  [privacy.youtube]
+    disable = true
+
+# Output formats
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS"]
+
+# Markup
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = true
+    lineNumbersInTable = true
+    noClasses = false
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+# Build
+[build]
+  writeStats = true

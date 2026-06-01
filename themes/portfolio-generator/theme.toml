@@ -1,0 +1,8 @@
+name = "Portfolio Generator"
+license = "MIT"
+description = "A Hugo/Tailwind portfolio generator for developers and creatives using Markdown and data files."
+min_version = "0.123.0"
+
+[author]
+  name = "Chris Schramm"
+  homepage = "https://schrmm.github.io"

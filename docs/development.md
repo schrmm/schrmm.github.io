@@ -17,7 +17,7 @@ cd schrmm.github.io
 npm install
 
 # Start development server
-hugo server -D
+npm run dev
 ```
 
 ## Development Workflow
@@ -59,7 +59,7 @@ hugo server -D
 
 ### Template Structure
 ```
-layouts/
+themes/portfolio-generator/layouts/
 ├── _default/
 │   ├── baseof.html    # Base template
 │   ├── list.html      # List template
@@ -71,7 +71,7 @@ layouts/
 ```
 
 ### Creating New Components
-1. Create component file in `layouts/partials/components/`
+1. Create component file in `themes/portfolio-generator/layouts/partials/components/`
 2. Use proper Hugo templating syntax
 3. Include responsive design
 4. Add dark mode support
@@ -109,19 +109,20 @@ layouts/
 ### Development Build
 ```bash
 # Start development server
-hugo server -D
+npm run dev
 
 # With drafts disabled
-hugo server
+hugo server --source exampleSite --themesDir ../themes
 ```
 
 ### Production Build
 ```bash
 # Build for production
-hugo --gc --minify
+npm run build-css
+npm run build
 
 # With environment variables
-HUGO_ENV=production hugo --gc --minify
+HUGO_ENV=production npm run build
 ```
 
 ## Troubleshooting
