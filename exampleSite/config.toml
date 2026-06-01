@@ -6,7 +6,8 @@ enableGitInfo = true
 enableEmoji = true
 
 # Theme settings
-theme = "portfolio-generator"
+theme = "terminal"
+pagination.pagerSize = 5
 
 # Taxonomies
 [taxonomies]
@@ -16,6 +17,7 @@ theme = "portfolio-generator"
 
 # Site parameters
 [params]
+  subtitle = "Personal portfolio and blog of Chris Schramm - Software Developer and Tech Enthusiast"
   description = "Personal portfolio and blog of Chris Schramm - Software Developer and Tech Enthusiast"
   author = "Chris Schramm"
   email = "contact@chrisschramm.dev" # Updated from example.com
@@ -31,9 +33,12 @@ theme = "portfolio-generator"
   keywords = ["software development", "web development", "portfolio", "blog"]
   
   # Theme
+  contentTypeName = "blog"
+  showMenuItems = 6
+  fullWidthTheme = false
+  centerTheme = false
+  autoCover = true
   mainSections = ["blog", "projects", "case-studies"]
-  colorScheme = "light" # system, light, or dark
-  accentColor = "#2563eb"
   
   # Content
   dateFormat = "January 2, 2006"
@@ -45,6 +50,20 @@ theme = "portfolio-generator"
   enableSearch = false
   enableDarkMode = true
   enableToc = true
+
+  menuMore = "Show more"
+  readMore = "Read more"
+  readOtherPosts = "Read other posts"
+  newerPosts = "Newer posts"
+  olderPosts = "Older posts"
+  missingContentMessage = "Page not found..."
+  missingBackButtonLabel = "Back to home page"
+  minuteReadingTime = "min read"
+  words = "words"
+
+  [params.logo]
+    logoText = "COMMODORE / CHRIS SCHRAMM"
+    logoHomeLink = "/"
 
 # Menu
 [menu]
