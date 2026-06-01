@@ -36,7 +36,7 @@ pagination.pagerSize = 5
   contentTypeName = "blog"
   showMenuItems = 6
   fullWidthTheme = false
-  centerTheme = false
+  centerTheme = true
   autoCover = true
   mainSections = ["blog", "projects", "case-studies"]
   
