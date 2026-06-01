@@ -1,16 +1,19 @@
 # Contributing to Portfolio Website
 
-Thank you for your interest in contributing to this portfolio website! This document provides guidelines and instructions for contributing.
+Thank you for your interest in contributing to this portfolio website! This
+document provides guidelines and instructions for contributing.
 
 ## Code of Conduct
 
-Please be respectful and constructive in all interactions. We aim to maintain a welcoming and inclusive environment for everyone.
+Please be respectful and constructive in all interactions. We aim to maintain a
+welcoming and inclusive environment for everyone.
 
 ## Getting Started
 
 ### Prerequisites
 
 Before you begin, ensure you have the following installed:
+
 - **Hugo Extended** (v0.123.0 or later) - Required for TailwindCSS processing
 - **Node.js** (v18 or later) and npm
 - **Git**
@@ -20,22 +23,26 @@ Before you begin, ensure you have the following installed:
 1. **Fork the repository** on GitHub
 
 2. **Clone your fork** locally:
+
    ```bash
    git clone https://github.com/YOUR-USERNAME/schrmm.github.io.git
    cd schrmm.github.io
    ```
 
 3. **Install dependencies**:
+
    ```bash
    npm install
    ```
 
 4. **Create a feature branch**:
+
    ```bash
    git checkout -b feature/your-feature-name
    ```
 
 5. **Start the development server**:
+
    ```bash
    npm run dev
    # or
@@ -50,12 +57,17 @@ Before you begin, ensure you have the following installed:
 
 This project follows these style guidelines:
 
-- **HTML**: Use semantic HTML5 elements, maintain consistent indentation (2 spaces)
-- **CSS**: Follow the existing TailwindCSS utility-first approach, use custom classes only when necessary
-- **JavaScript**: Use modern ES6+ syntax, maintain consistency with existing Alpine.js patterns
-- **Hugo Templates**: Follow Go template best practices, use meaningful variable names
+- **HTML**: Use semantic HTML5 elements, maintain consistent indentation (2
+  spaces)
+- **CSS**: Follow the existing TailwindCSS utility-first approach, use custom
+  classes only when necessary
+- **JavaScript**: Use modern ES6+ syntax, maintain consistency with existing
+  Alpine.js patterns
+- **Hugo Templates**: Follow Go template best practices, use meaningful variable
+  names
 
 The project includes:
+
 - `.editorconfig` - for consistent editor settings
 - `.prettierrc` - for code formatting (run `npm run format` before committing)
 
@@ -79,6 +91,7 @@ schrmm.github.io/
 ### Making Changes
 
 1. **Write clear, descriptive commit messages**:
+
    ```bash
    git commit -m "Add: new blog post about Hugo"
    git commit -m "Fix: dark mode toggle on mobile"
@@ -90,6 +103,7 @@ schrmm.github.io/
    - Test responsive design (mobile, tablet, desktop)
    - Test both light and dark modes
    - Ensure the build completes successfully:
+
      ```bash
      npm run build
      ```
@@ -103,6 +117,7 @@ schrmm.github.io/
 ### Pull Request Process
 
 1. **Ensure your code is up to date** with the main branch:
+
    ```bash
    git checkout main
    git pull upstream main
@@ -111,6 +126,7 @@ schrmm.github.io/
    ```
 
 2. **Push your changes** to your fork:
+
    ```bash
    git push origin feature/your-feature-name
    ```
@@ -144,24 +160,28 @@ Before submitting, ensure:
 We welcome various types of contributions:
 
 ### Bug Fixes
+
 - Fix broken links
 - Resolve styling issues
 - Fix responsiveness problems
 - Address browser compatibility issues
 
 ### Features
+
 - New content sections
 - Enhanced functionality
 - Improved accessibility
 - Performance optimizations
 
 ### Documentation
+
 - Improve existing documentation
 - Add missing documentation
 - Fix typos or unclear explanations
 - Add code examples
 
 ### Design
+
 - Improve visual design
 - Enhance user experience
 - Refine animations and transitions
@@ -172,19 +192,21 @@ We welcome various types of contributions:
 ### Adding Blog Posts
 
 1. Create a new file in `content/blog/`:
+
    ```bash
    hugo new blog/your-post-title.md
    ```
 
 2. Fill in the front matter:
+
    ```yaml
    ---
-   title: "Your Post Title"
+   title: 'Your Post Title'
    date: 2024-01-15
    draft: false
-   description: "A brief description"
-   categories: ["Category"]
-   tags: ["tag1", "tag2"]
+   description: 'A brief description'
+   categories: ['Category']
+   tags: ['tag1', 'tag2']
    ---
    ```
 
@@ -193,6 +215,7 @@ We welcome various types of contributions:
 ### Adding Projects
 
 1. Create a new file in `content/projects/`:
+
    ```bash
    hugo new projects/your-project.md
    ```
@@ -201,14 +224,19 @@ We welcome various types of contributions:
 
 ## Questions or Problems?
 
-- **General questions**: Open a [GitHub Discussion](https://github.com/schrmm/schrmm.github.io/discussions)
-- **Bug reports**: Create a [bug report issue](https://github.com/schrmm/schrmm.github.io/issues/new?template=bug_report.md)
-- **Feature requests**: Create a [feature request issue](https://github.com/schrmm/schrmm.github.io/issues/new?template=feature_request.md)
+- **General questions**: Open a
+  [GitHub Discussion](https://github.com/schrmm/schrmm.github.io/discussions)
+- **Bug reports**: Create a
+  [bug report issue](https://github.com/schrmm/schrmm.github.io/issues/new?template=bug_report.md)
+- **Feature requests**: Create a
+  [feature request issue](https://github.com/schrmm/schrmm.github.io/issues/new?template=feature_request.md)
 
 ## License
 
-By contributing, you agree that your contributions will be licensed under the MIT License.
+By contributing, you agree that your contributions will be licensed under the
+MIT License.
 
-## Thank You!
+## Thank You
 
-Your contributions help make this project better. Thank you for taking the time to contribute!
+Your contributions help make this project better. Thank you for taking the time
+to contribute!

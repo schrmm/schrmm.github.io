@@ -3,9 +3,12 @@
 ## GitHub Pages Deployment
 
 ### Automatic Deployment
-The site is automatically deployed to GitHub Pages using GitHub Actions when changes are pushed to the main branch.
+
+The site is automatically deployed to GitHub Pages using GitHub Actions when
+changes are pushed to the main branch.
 
 ### Workflow Configuration
+
 ```yaml
 # .github/workflows/deploy.yml
 name: Deploy to GitHub Pages
@@ -19,6 +22,7 @@ on:
 ```
 
 ### Manual Deployment
+
 ```bash
 # Build site
 npm run build
@@ -33,6 +37,7 @@ git push origin gh-pages
 ## Environment Configuration
 
 ### Production Settings
+
 ```toml
 # exampleSite/config.toml
 baseURL = "https://schrmm.github.io/"
@@ -40,6 +45,7 @@ environment = "production"
 ```
 
 ### Development Settings
+
 ```toml
 # exampleSite/config.development.toml
 baseURL = "http://localhost:1313/"
@@ -49,6 +55,7 @@ environment = "development"
 ## Security Headers
 
 ### Netlify Headers
+
 ```toml
 # netlify.toml
 [[headers]]
@@ -60,6 +67,7 @@ environment = "development"
 ```
 
 ### Custom Server Headers
+
 - Content Security Policy
 - HSTS
 - Referrer Policy
@@ -68,12 +76,14 @@ environment = "development"
 ## Performance Optimization
 
 ### Build Optimization
+
 - Minification enabled
 - Asset optimization
 - Image processing
 - Cache settings
 
 ### CDN Configuration
+
 - Asset delivery
 - Cache policies
 - SSL/TLS settings
@@ -82,12 +92,14 @@ environment = "development"
 ## Monitoring
 
 ### Analytics
+
 - Setup Google Analytics
 - Configure privacy settings
 - Track key metrics
 - Monitor performance
 
 ### Error Tracking
+
 - Log collection
 - Error reporting
 - Performance monitoring
@@ -96,12 +108,14 @@ environment = "development"
 ## Maintenance
 
 ### Regular Tasks
+
 1. Update dependencies
 2. Security patches
 3. Content updates
 4. Performance checks
 
 ### Backup Strategy
+
 1. Content backup
 2. Database backup
 3. Asset backup
@@ -110,12 +124,14 @@ environment = "development"
 ## Troubleshooting
 
 ### Common Issues
+
 1. Build failures
 2. Deployment errors
 3. Security alerts
 4. Performance issues
 
 ### Resolution Steps
+
 1. Check build logs
 2. Verify configurations
 3. Test locally
@@ -124,12 +140,14 @@ environment = "development"
 ## Custom Domain Setup
 
 ### DNS Configuration
+
 1. Add A records
 2. Configure CNAME
 3. Enable HTTPS
 4. Verify settings
 
 ### SSL/TLS Setup
+
 1. Enable HTTPS
 2. Configure certificates
 3. Set up redirects
@@ -138,12 +156,14 @@ environment = "development"
 ## Rollback Procedures
 
 ### Emergency Rollback
+
 1. Identify issue
 2. Revert changes
 3. Deploy previous version
 4. Verify functionality
 
 ### Version Control
+
 1. Tag releases
 2. Document changes
 3. Maintain changelog

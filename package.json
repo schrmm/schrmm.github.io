@@ -12,53 +12,43 @@
     "url": "https://github.com/schrmm/schrmm.github.io/issues"
   },
   "homepage": "https://schrmm.github.io",
-  "keywords": [
-    "portfolio",
-    "hugo",
-    "tailwindcss",
-    "blog",
-    "static-site",
-    "personal-website"
-  ],
+  "keywords": ["portfolio", "hugo", "tailwindcss", "blog", "static-site", "personal-website"],
   "engines": {
-    "node": ">=18.0.0",
-    "npm": ">=9.0.0"
+    "node": ">=26.0.0",
+    "npm": ">=11.0.0"
   },
   "scripts": {
     "dev": "hugo server -D --source exampleSite --themesDir ../themes",
     "dev:watch": "hugo server -D --source exampleSite --themesDir ../themes --disableFastRender",
     "build": "npm run build-css && npm run build:hugo",
     "build:hugo": "hugo --source exampleSite --themesDir ../themes --gc --minify",
+    "build:pages": "npm run build-css && hugo --source exampleSite --themesDir ../themes --gc --minify --baseURL https://schrmm.github.io/",
     "build:css": "npm run build-css",
     "build-css": "npx tailwindcss -i themes/portfolio-generator/assets/css/main.css -o exampleSite/static/css/style.css",
     "build:draft": "npm run build-css && hugo --source exampleSite --themesDir ../themes --gc --minify --buildDrafts",
     "clean": "rimraf exampleSite/public exampleSite/resources public resources",
     "clean:all": "rimraf public resources node_modules package-lock.json",
-    "format": "prettier --write \"**/*.{html,css,js,json,md,yml,yaml}\"",
-    "format:check": "prettier --check \"**/*.{html,css,js,json,md,yml,yaml}\"",
+    "format": "prettier --write \"**/*.{css,js,json,md,yml,yaml}\"",
+    "format:check": "prettier --check \"**/*.{css,js,json,md,yml,yaml}\"",
     "lint:css": "stylelint \"themes/portfolio-generator/assets/css/**/*.css\"",
     "lint:md": "markdownlint \"exampleSite/content/**/*.md\" \"docs/**/*.md\" \"*.md\" --ignore node_modules",
-    "validate": "npm run format:check && npm run lint:css",
+    "validate": "npm run format:check && npm run lint:css && npm run lint:md",
     "serve": "npm run dev",
     "prebuild": "npm run clean"
   },
   "dependencies": {
-    "@tailwindcss/aspect-ratio": "^0.4.2",
-    "@tailwindcss/forms": "^0.5.7",
-    "@tailwindcss/typography": "^0.5.10",
-    "alpinejs": "^3.13.5",
-    "autoprefixer": "^10.4.17",
-    "cssnano": "^6.0.3",
-    "postcss": "^8.4.35",
-    "postcss-cli": "^11.0.0",
-    "postcss-import": "^16.1.0",
-    "tailwindcss": "^3.4.1"
+    "@tailwindcss/aspect-ratio": "0.4.2",
+    "@tailwindcss/cli": "4.3.0",
+    "@tailwindcss/forms": "0.5.11",
+    "@tailwindcss/typography": "0.5.19",
+    "alpinejs": "3.15.12",
+    "tailwindcss": "4.3.0"
   },
   "devDependencies": {
-    "prettier": "^3.2.5",
-    "rimraf": "^5.0.5",
-    "stylelint": "^16.2.1",
-    "stylelint-config-standard": "^36.0.0",
-    "markdownlint-cli": "^0.39.0"
+    "markdownlint-cli": "0.48.0",
+    "prettier": "3.8.3",
+    "rimraf": "6.1.3",
+    "stylelint": "17.12.0",
+    "stylelint-config-standard": "40.0.0"
   }
 }

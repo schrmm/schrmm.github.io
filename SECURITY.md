@@ -2,7 +2,8 @@
 
 ## Supported Versions
 
-As this is a personal portfolio website, security updates are applied to the latest version only.
+As this is a personal portfolio website, security updates are applied to the
+latest version only.
 
 | Version | Supported          |
 | ------- | ------------------ |
@@ -11,7 +12,8 @@ As this is a personal portfolio website, security updates are applied to the lat
 
 ## Reporting a Vulnerability
 
-If you discover a security vulnerability in this portfolio website, please report it responsibly.
+If you discover a security vulnerability in this portfolio website, please
+report it responsibly.
 
 ### How to Report
 
@@ -20,7 +22,8 @@ If you discover a security vulnerability in this portfolio website, please repor
 Instead, please report security issues via one of these methods:
 
 1. **Email**: Send details to `contact@chrisschramm.dev`
-2. **GitHub Security Advisory**: Use the "Report a vulnerability" feature in the Security tab
+2. **GitHub Security Advisory**: Use the "Report a vulnerability" feature in the
+   Security tab
 
 ### What to Include
 
@@ -40,21 +43,25 @@ After you submit a vulnerability report, you can expect:
 1. **Acknowledgment**: Within 48 hours of submission
 2. **Initial Assessment**: Within 5 business days
 3. **Status Updates**: Regular updates on the progress
-4. **Resolution Timeline**: Fix deployed within 30 days for critical issues, 90 days for non-critical
+4. **Resolution Timeline**: Fix deployed within 30 days for critical issues, 90
+   days for non-critical
 
 ### Security Considerations
 
-This is a static website built with Hugo and hosted on GitHub Pages. Common security considerations include:
+This is a static website built with Hugo and hosted on GitHub Pages. Common
+security considerations include:
 
 - **Content Security**: Ensuring content doesn't contain malicious code
 - **Dependency Security**: Keeping Node.js and Hugo dependencies updated
 - **XSS Prevention**: Properly escaping user-generated content
 - **HTTPS**: Ensuring all resources are served over HTTPS
-- **Third-party Services**: Reviewing security of integrated services (fonts, form endpoints)
+- **Third-party Services**: Reviewing security of integrated services (fonts,
+  form endpoints)
 
 ### Scope
 
 **In Scope:**
+
 - Cross-Site Scripting (XSS)
 - Injection vulnerabilities
 - Authentication/authorization issues (if applicable)
@@ -62,6 +69,7 @@ This is a static website built with Hugo and hosted on GitHub Pages. Common secu
 - Misconfiguration issues
 
 **Out of Scope:**
+
 - Issues in third-party services (Google Fonts, Formspree)
 - Social engineering attacks
 - Denial of Service (DoS) attacks
@@ -106,12 +114,14 @@ We regularly:
 ## Contact
 
 For any security-related questions or concerns:
-- Email: contact@chrisschramm.dev
+
+- Email: <contact@chrisschramm.dev>
 - GitHub: @schrmm
 
 ## Acknowledgments
 
-We appreciate the security research community's efforts in keeping the web secure. Thank you to everyone who responsibly reports security issues.
+We appreciate the security research community's efforts in keeping the web
+secure. Thank you to everyone who responsibly reports security issues.
 
 ---
 

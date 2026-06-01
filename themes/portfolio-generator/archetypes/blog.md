@@ -2,7 +2,7 @@
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 description: ""
-author: "Chris Schramm"
+author: "{{ with .Site.Params.author }}{{ . }}{{ end }}"
 categories: []
 tags: []
 featured_image: ""

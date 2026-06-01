@@ -3,19 +3,19 @@
     <div class="container mx-auto px-4 py-16 md:py-24">
         <div class="max-w-3xl">
             <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-                {{ with .Site.Data.portfolio.profile.name }}{{ . }}{{ end }}
+                {{ with .Site.Params.hero_title }}{{ . }}{{ else }}{{ .Site.Title }}{{ end }}
             </h1>
             <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
-                {{ with .Site.Data.portfolio.profile.bio }}{{ . }}{{ end }}
+                {{ with .Site.Params.hero_description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}
             </p>
             <div class="flex space-x-4">
-                <a href="#projects" 
+                <a href="{{ "projects/" | relURL }}"
                    class="inline-flex items-center px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors duration-200">
-                    View Projects
+                    {{ .Site.Params.hero_primary_label | default "View Projects" }}
                 </a>
-                <a href="{{ "resume/" | relURL }}"
+                <a href="{{ "contact/" | relURL }}"
                    class="inline-flex items-center px-6 py-3 bg-white dark:bg-gray-800 text-primary dark:text-primary-light rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
-                    Resume
+                    {{ .Site.Params.hero_secondary_label | default "Contact" }}
                 </a>
             </div>
         </div>
@@ -24,61 +24,9 @@
 {{ end }}
 
 {{ define "main" }}
-<!-- Skills Section -->
-<section class="mb-16">
-    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Skills & Expertise</h2>
-    {{ partial "components/skills-list.html" .Site.Data.portfolio.skills }}
-</section>
-
-<!-- Featured Projects -->
-<section id="projects" class="mb-16">
-    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Featured Projects</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {{ range where .Site.RegularPages "Type" "projects" }}
-            {{ if .Params.featured }}
-                {{ partial "components/project-card.html" . }}
-            {{ end }}
-        {{ end }}
-    </div>
-    <div class="mt-8 text-center">
-        <a href="{{ "projects/" | relURL }}"
-           class="inline-flex items-center px-6 py-3 bg-white dark:bg-gray-800 text-primary dark:text-primary-light rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
-            View All Projects
-            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-            </svg>
-        </a>
+<section class="container mx-auto px-4 py-12">
+    <div class="prose dark:prose-invert max-w-none">
+        {{ .Content }}
     </div>
 </section>
-
-<!-- Qualifications -->
-{{ with .Site.Data.portfolio.qualifications }}
-<section class="mb-16">
-    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Qualifications</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {{ range . }}
-        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
-            <p class="text-lg text-gray-900 dark:text-white">{{ . }}</p>
-        </div>
-        {{ end }}
-    </div>
-</section>
-{{ end }}
-
-<!-- Unique Skills -->
-{{ with .Site.Data.portfolio.unique_skills }}
-<section>
-    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Unique Skills</h2>
-    <div class="grid grid-cols-1 gap-6">
-        {{ range . }}
-            {{ range $key, $value := . }}
-            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">{{ $key }}</h3>
-                <p class="text-gray-600 dark:text-gray-300">{{ $value }}</p>
-            </div>
-            {{ end }}
-        {{ end }}
-    </div>
-</section>
-{{ end }}
 {{ end }}

@@ -1,6 +1,8 @@
 # Portfolio Generator
 
-A Hugo and TailwindCSS portfolio generator for developers and creatives. The reusable generator lives in `themes/portfolio-generator`, while `exampleSite` is a personal demo site that can be deployed to GitHub Pages.
+A Hugo and TailwindCSS portfolio generator for developers and creatives. The
+reusable generator lives in `themes/portfolio-generator`, while `exampleSite` is
+a personal demo site that can be deployed to GitHub Pages.
 
 ## Features
 
@@ -20,7 +22,8 @@ A Hugo and TailwindCSS portfolio generator for developers and creatives. The reu
 
 The site implements a comprehensive design system featuring:
 
-- **Color system**: Primary, neutral, and accent color palettes with dark mode variants
+- **Color system**: Primary, neutral, and accent color palettes with dark mode
+  variants
 - **Typography system**: Consistent type scale and font treatments
 - **Component library**: Buttons, cards, badges, navigation elements
 - **Spacing system**: Consistent margins and paddings
@@ -29,12 +32,14 @@ The site implements a comprehensive design system featuring:
 ## Quick Start
 
 1. **Prerequisites**
+
    ```bash
    # Install Hugo Extended (required for TailwindCSS)
    # Install Node.js and npm
    ```
 
 2. **Installation**
+
    ```bash
    # Clone the repository
    git clone https://github.com/schrmm/schrmm.github.io.git
@@ -45,15 +50,17 @@ The site implements a comprehensive design system featuring:
    ```
 
 3. **Development**
-    ```bash
-    # Start the example site development server
-    npm run dev
-    ```
+
+   ```bash
+   # Start the example site development server
+   npm run dev
+   ```
 
 4. **Production Build**
-    ```bash
-    # Build CSS and the example site
-    npm run build
+
+   ```bash
+   # Build CSS and the example site
+   npm run build
    ```
 
 ## Documentation
@@ -96,7 +103,8 @@ schrmm.github.io/
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
+for details.
 
 ## Acknowledgments
 

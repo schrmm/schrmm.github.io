@@ -6,7 +6,7 @@
     "location": "San Francisco, CA",
     "bio": "Software engineer passionate about web technologies and open source."
   },
-  
+
   "skills": [
     "Python Development",
     "Data Science",
@@ -14,10 +14,10 @@
     "Business Intelligence",
     "Domain-Driven Design",
     "System Architecture",
-    "Business Process Optimization", 
+    "Business Process Optimization",
     "Project Management",
     "Interim Management",
-    "Quality Management"  
+    "Quality Management"
   ],
 
   "qualifications": [
@@ -29,11 +29,11 @@
 
   "unique_skills": [
     {
-    "Cross-Domain Integration": "Seamlessly connect software development, business process management, data analysis modeling—areas that typically exist in separate professional silos.",
-    "Structured Knowledge Architecture": "Sophisticated approach to organizing complex information demonstrates exceptional metacognitive skills, creating interconnected knowledge systems rather than isolated facts.",
-    "Domain-Modeling First Mindset": "Approach problems by first establishing clear conceptual models before implementation, reflecting a deeper understanding of system design principles.",
-    "Process Intelligence Expertise": "Knowledge of process mining and data-driven process improvement represents a relatively rare skillset that bridges technical implementation and business operations.",
-    "Backward Planning Methodology": "Goal-first approach to project planning shows a strategic mindset that starts with desired outcomes rather than available inputs."
+      "Cross-Domain Integration": "Seamlessly connect software development, business process management, data analysis modeling—areas that typically exist in separate professional silos.",
+      "Structured Knowledge Architecture": "Sophisticated approach to organizing complex information demonstrates exceptional metacognitive skills, creating interconnected knowledge systems rather than isolated facts.",
+      "Domain-Modeling First Mindset": "Approach problems by first establishing clear conceptual models before implementation, reflecting a deeper understanding of system design principles.",
+      "Process Intelligence Expertise": "Knowledge of process mining and data-driven process improvement represents a relatively rare skillset that bridges technical implementation and business operations.",
+      "Backward Planning Methodology": "Goal-first approach to project planning shows a strategic mindset that starts with desired outcomes rather than available inputs."
     }
   ],
 
@@ -41,13 +41,13 @@
     {
       "name": "Portfolio Generator",
       "description": "Automated portfolio and resume generation tool using Hugo",
-      "url": "/projects/portfolio-generator",
+      "url": "projects/portfolio-generator/",
       "featured": true
     },
     {
       "name": "Data Visualization Dashboard",
       "description": "Interactive dashboard for analyzing complex datasets",
-      "url": "/projects/data-viz-dashboard",
+      "url": "projects/data-viz-dashboard/",
       "featured": true
     }
   ],

@@ -1,11 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./layouts/**/*.html",
-    "./content/**/*.{html,md}",
-    "./themes/**/layouts/**/*.html",
-    "./exampleSite/content/**/*.{html,md}",
-    "./exampleSite/layouts/**/*.html",
+    './layouts/**/*.html',
+    './content/**/*.{html,md}',
+    './themes/**/layouts/**/*.html',
+    './exampleSite/content/**/*.{html,md}',
+    './exampleSite/layouts/**/*.html',
   ],
   darkMode: 'class', // Enable dark mode with class-based switching
   theme: {
@@ -24,9 +24,9 @@ module.exports = {
           700: '#006969',
           800: '#004646',
           900: '#002323',
-          'light': '#33bfbf',
+          light: '#33bfbf',
           'light-dark': '#00afaf',
-          'dark': '#008c8c'
+          dark: '#008c8c',
         },
         // Accent amber palette
         accent: {
@@ -48,7 +48,7 @@ module.exports = {
           700: '#334155',
           800: '#1e293b',
           900: '#0f172a',
-          950: '#020617'
+          950: '#020617',
         },
       },
       typography: {
@@ -95,8 +95,8 @@ module.exports = {
         mono: ['JetBrains Mono', 'monospace'],
       },
       spacing: {
-        '128': '32rem',
-        '144': '36rem',
+        128: '32rem',
+        144: '36rem',
       },
       borderRadius: {
         '4xl': '2rem',

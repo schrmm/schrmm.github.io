@@ -6,6 +6,7 @@
 /assets/jsconfig.json
 hugo_stats.json
 exampleSite/hugo_stats.json
+exampleSite/static/css/style.css
 
 # Node modules
 node_modules/

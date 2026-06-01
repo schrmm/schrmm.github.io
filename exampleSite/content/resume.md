@@ -1,15 +1,16 @@
 ---
-title: "Resume"
+title: 'Resume'
 date: 2024-04-01T09:00:00-08:00
 draft: false
-layout: "resume"
-description: "My professional experience, education, and skills"
-author: "Chris Schramm"
+layout: 'resume'
+description: 'My professional experience, education, and skills'
+author: 'Chris Schramm'
 ---
 
 ## Professional Experience
 
 ### Senior Software Engineer
+
 #### Tech Innovations Inc. | 2020-Present
 
 - Led development of cloud-native applications using microservices architecture
@@ -18,6 +19,7 @@ author: "Chris Schramm"
 - Designed and deployed scalable solutions handling 300% traffic increase
 
 ### Full Stack Developer
+
 #### Digital Solutions Corp | 2018-2020
 
 - Developed responsive web applications using React and Node.js
@@ -26,6 +28,7 @@ author: "Chris Schramm"
 - Implemented automated testing reducing bug reports by 25%
 
 ### Junior Developer
+
 #### Web Experts LLC | 2016-2018
 
 - Created custom WordPress themes and plugins for clients
@@ -36,6 +39,7 @@ author: "Chris Schramm"
 ## Education
 
 ### MS in Computer Science
+
 #### Stanford University | 2020
 
 - Focus on distributed systems and cloud computing
@@ -43,6 +47,7 @@ author: "Chris Schramm"
 - GPA: 3.9/4.0
 
 ### BS in Computer Engineering
+
 #### MIT | 2018
 
 - Coursework in algorithms, data structures, and software engineering
@@ -52,15 +57,19 @@ author: "Chris Schramm"
 ## Technical Skills
 
 ### Programming Languages
+
 - Python, JavaScript/TypeScript, Go, Java, SQL
 
 ### Frameworks & Technologies
+
 - React, Node.js, Express, Django, Docker, Kubernetes
 
 ### Cloud & DevOps
+
 - AWS (Certified Solutions Architect), GCP, CI/CD pipelines, Terraform
 
 ### Database Technologies
+
 - PostgreSQL, MongoDB, Redis, Elasticsearch
 
 ## Certifications
@@ -72,9 +81,12 @@ author: "Chris Schramm"
 
 ## Projects
 
-- **Microservice Architecture Framework** - Open-source toolkit for building scalable microservices
-- **Data Visualization Dashboard** - Interactive dashboard for complex data analysis
-- **E-commerce Platform** - Full-featured online store with payment processing and inventory management
+- **Microservice Architecture Framework** - Open-source toolkit for building
+  scalable microservices
+- **Data Visualization Dashboard** - Interactive dashboard for complex data
+  analysis
+- **E-commerce Platform** - Full-featured online store with payment processing
+  and inventory management
 
 ## Leadership & Soft Skills
 

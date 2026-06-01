@@ -1,34 +1,41 @@
 ---
-title: "Portfolio Generator"
-description: "Automated portfolio and resume generation tool using Hugo"
-tech_stack: ["Hugo", "Go", "Tailwind CSS", "JavaScript"]
-author: "Chris Schramm"
+title: 'Portfolio Generator'
+description: 'Automated portfolio and resume generation tool using Hugo'
+tech_stack: ['Hugo', 'Go', 'Tailwind CSS', 'JavaScript']
+author: 'Chris Schramm'
 date: 2024-03-20
 featured: true
 ---
 
 ## Overview
 
-The Portfolio Generator is a powerful tool that helps developers create and maintain their professional portfolios with ease. Built with Hugo and enhanced with Tailwind CSS, this project streamlines the process of showcasing your work, skills, and experience.
+The Portfolio Generator is a powerful tool that helps developers create and
+maintain their professional portfolios with ease. Built with Hugo and enhanced
+with Tailwind CSS, this project streamlines the process of showcasing your work,
+skills, and experience.
 
 ## Key Features
 
 ### 1. Easy Content Management
+
 - Simple markdown-based content creation
 - Automated project page generation
 - Built-in support for blog posts and case studies
 
 ### 2. Modern Design
+
 - Responsive layout that works on all devices
 - Clean and professional appearance
 - Customizable color schemes and typography
 
 ### 3. Performance Optimized
+
 - Fast loading times with optimized assets
 - SEO-friendly structure
 - Minimal JavaScript usage
 
 ### 4. Developer-Friendly
+
 - Clear documentation
 - Modular component structure
 - Easy local development setup
@@ -46,10 +53,13 @@ The project uses several modern web technologies and best practices:
 
 1. Clone the repository
 2. Install dependencies:
+
    ```bash
    npm install
    ```
+
 3. Start the development server:
+
    ```bash
    npm run dev
    ```

@@ -1,14 +1,17 @@
 # Design System
 
-This document outlines the design system implemented in this portfolio website, providing consistent guidelines for colors, typography, components, and spacing.
+This document outlines the design system implemented in this portfolio website,
+providing consistent guidelines for colors, typography, components, and spacing.
 
 ## Color System
 
-The color system is built around three main palettes: primary, neutral, and accent. Each color is available in multiple shades and has dark mode variants.
+The color system is built around three main palettes: primary, neutral, and
+accent. Each color is available in multiple shades and has dark mode variants.
 
 ### Primary Colors (Teal Palette)
 
-Primary colors are used for main interactive elements, important UI components, and primary branding.
+Primary colors are used for main interactive elements, important UI components,
+and primary branding.
 
 ```css
 primary: {
@@ -31,7 +34,8 @@ primary: {
 
 ### Neutral Colors (Slate Palette)
 
-Neutral colors are used for text, backgrounds, borders, and non-interactive elements.
+Neutral colors are used for text, backgrounds, borders, and non-interactive
+elements.
 
 ```css
 neutral: {
@@ -52,7 +56,8 @@ neutral: {
 
 ### Accent Colors (Amber Palette)
 
-Accent colors are used sparingly for highlighting, secondary interactions, and visual interest.
+Accent colors are used sparingly for highlighting, secondary interactions, and
+visual interest.
 
 ```css
 accent: {
@@ -92,7 +97,7 @@ Tailwind's default type scale is used for consistency:
 - **text-xs**: 0.75rem (12px)
 - **text-sm**: 0.875rem (14px)
 - **text-base**: 1rem (16px)
-- **text-lg**: 1.125rem (18px) 
+- **text-lg**: 1.125rem (18px)
 - **text-xl**: 1.25rem (20px)
 - **text-2xl**: 1.5rem (24px)
 - **text-3xl**: 1.875rem (30px)
@@ -109,7 +114,8 @@ Tailwind's default type scale is used for consistency:
 
 ## Component System
 
-The component system is built using Tailwind classes with custom components defined in a single CSS file.
+The component system is built using Tailwind classes with custom components
+defined in a single CSS file.
 
 ### Buttons
 
@@ -128,6 +134,7 @@ The component system is built using Tailwind classes with custom components defi
 ```
 
 #### Button Styles
+
 ```css
 .btn {
   @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium text-center transition-all duration-200;
@@ -161,6 +168,7 @@ The component system is built using Tailwind classes with custom components defi
 ```
 
 #### Card Styles
+
 ```css
 .card {
   @apply bg-white dark:bg-neutral-800 rounded-xl shadow-sm overflow-hidden border border-neutral-100 dark:border-neutral-700 transition-all duration-200 p-6;
@@ -182,6 +190,7 @@ The component system is built using Tailwind classes with custom components defi
 ```
 
 #### Navigation Styles
+
 ```css
 .nav-link {
   @apply text-neutral-600 hover:text-primary dark:text-neutral-300 dark:hover:text-primary-400 transition-colors duration-200;
@@ -192,7 +201,7 @@ The component system is built using Tailwind classes with custom components defi
 }
 ```
 
-### Layout 
+### Layout
 
 ```html
 <!-- Section with standard padding -->
@@ -207,6 +216,7 @@ The component system is built using Tailwind classes with custom components defi
 ```
 
 #### Layout Styles
+
 ```css
 .section {
   @apply py-12 md:py-16;
@@ -233,7 +243,8 @@ Additional utility classes are provided to extend Tailwind's functionality:
 
 ## CSS Organization
 
-All styles are now defined in a single `main.css` file for simplicity, using Tailwind's `@layer` directives:
+All styles are now defined in a single `main.css` file for simplicity, using
+Tailwind's `@layer` directives:
 
 ```css
 @tailwind base;

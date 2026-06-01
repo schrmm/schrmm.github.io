@@ -4,7 +4,9 @@ node_modules/
 # Build outputs
 public/
 resources/
-static/css/style.css
+exampleSite/public/
+exampleSite/resources/
+exampleSite/static/css/style.css
 
 # Hugo generated files
 .hugo_build.lock

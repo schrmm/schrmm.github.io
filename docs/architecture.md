@@ -10,6 +10,7 @@
 ## Directory Structure
 
 ### Content Organization
+
 ```
 exampleSite/content/
 ├── _index.md          # Home page content
@@ -21,6 +22,7 @@ exampleSite/content/
 ```
 
 ### Template Structure
+
 ```
 themes/portfolio-generator/layouts/
 ├── _default/         # Base templates
@@ -34,6 +36,7 @@ themes/portfolio-generator/layouts/
 ```
 
 ### CSS Structure
+
 ```
 themes/portfolio-generator/assets/
 ├── css/
@@ -47,17 +50,20 @@ exampleSite/static/
 ## Design System Architecture
 
 ### Color System
+
 - Primary teal palette with light/dark variants defined with hex values
 - Neutral slate palette for text and backgrounds
 - Amber accent colors for highlights and calls to action
 - Dark mode color mapping with dedicated variants
 
 ### Typography System
+
 - Standard Tailwind type scale
 - Consistent element spacing and margins
 - Inter and JetBrains Mono font families
 
 ### Component System
+
 - Simple component definitions in main.css using @layer directives
 - Essential UI components with consistent styling
 - Dark mode support for all components
@@ -65,12 +71,14 @@ exampleSite/static/
 ## Component Architecture
 
 ### Base Components
+
 - Header with dark mode toggle and responsive navigation
 - Footer with social links and site navigation
 - Container system for consistent layout spacing
 - Skip-to-content link for accessibility
 
 ### Content Components
+
 - Card components for projects and blog posts
 - Badge components for tags, categories, and labels
 - Button system with variants (primary, secondary, ghost)
@@ -78,6 +86,7 @@ exampleSite/static/
 - Timeline entries for experience and education
 
 ### Interactive Features
+
 - Dark/light mode switching with system preference detection
 - Mobile menu with smooth transitions
 - Form validation and submission
@@ -87,6 +96,7 @@ exampleSite/static/
 ## Styling Architecture
 
 ### TailwindCSS Configuration
+
 - Hex-value based color definitions with DEFAULT values
 - Extended typography configuration
 - Simplified component classes
@@ -94,6 +104,7 @@ exampleSite/static/
 - Extended spacing scale
 
 ### CSS Organization
+
 - Single CSS file architecture for simplicity
 - Component-first approach using @layer directives
 - Base styles for core elements (h1-h6, body, etc.)
@@ -104,13 +115,17 @@ exampleSite/static/
 ## Build Process
 
 ### Development
+
 1. TailwindCSS compiles theme CSS into `exampleSite/static/css/style.css`
 2. Hugo serves `exampleSite` with `themes/portfolio-generator`
 3. Alpine.js powers lightweight interactive elements
 
-The theme links `css/style.css` by default through `params.stylesheet`, so consumers can override the compiled stylesheet path without editing theme templates.
+The theme links `css/style.css` by default through `params.stylesheet`, so
+consumers can override the compiled stylesheet path without editing theme
+templates.
 
 ### Production
+
 1. Content processing
 2. Asset optimization
 3. CSS/JS minification

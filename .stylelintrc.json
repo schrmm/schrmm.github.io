@@ -10,11 +10,13 @@
           "variants",
           "responsive",
           "screen",
-          "layer"
+          "layer",
+          "config"
         ]
       }
     ],
-    "declaration-block-trailing-semicolon": null,
+    "import-notation": null,
+    "no-invalid-position-at-import-rule": null,
     "no-descending-specificity": null,
     "selector-class-pattern": null,
     "value-keyword-case": null,
@@ -28,7 +30,9 @@
   "ignoreFiles": [
     "public/**/*",
     "resources/**/*",
-    "static/css/style.css",
+    "exampleSite/public/**/*",
+    "exampleSite/resources/**/*",
+    "exampleSite/static/css/style.css",
     "node_modules/**/*"
   ]
 }
