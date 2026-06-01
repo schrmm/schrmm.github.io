@@ -1,5 +1,5 @@
 baseURL = "/"
-languageCode = "en-us"
+locale = "en-US"
 title = "Chris Schramm - Portfolio"
 enableRobotsTXT = true
 enableGitInfo = true
@@ -81,7 +81,7 @@ theme = "portfolio-generator"
     disable = true
   [privacy.instagram]
     disable = true
-  [privacy.twitter]
+  [privacy.x]
     disable = true
   [privacy.vimeo]
     disable = true
