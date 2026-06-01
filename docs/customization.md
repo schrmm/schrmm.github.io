@@ -43,6 +43,14 @@ module.exports = {
 
 See the full [Design System Documentation](design-system.md) for complete color palette details.
 
+### Stylesheet Output
+The theme links `css/style.css` by default. Override the path from site configuration when your compiled CSS lives somewhere else:
+
+```toml
+[params]
+  stylesheet = "css/custom.css"
+```
+
 ### Typography
 Customize typography using the consistent type scale:
 

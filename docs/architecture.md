@@ -108,6 +108,8 @@ exampleSite/static/
 2. Hugo serves `exampleSite` with `themes/portfolio-generator`
 3. Alpine.js powers lightweight interactive elements
 
+The theme links `css/style.css` by default through `params.stylesheet`, so consumers can override the compiled stylesheet path without editing theme templates.
+
 ### Production
 1. Content processing
 2. Asset optimization

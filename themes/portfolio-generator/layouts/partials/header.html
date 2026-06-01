@@ -2,9 +2,9 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <nav class="flex justify-between items-center h-16">
             <!-- Logo/Site Title -->
-            <a href="/" class="group flex items-center">
+            <a href="{{ "/" | relURL }}" class="group flex items-center">
                 <!-- Optional: Add a logo here -->
-                <!-- <img src="/images/logo.svg" alt="Logo" class="h-8 w-auto mr-3"> -->
+                <!-- <img src="{{ "images/logo.svg" | relURL }}" alt="Logo" class="h-8 w-auto mr-3"> -->
                 
                 <span class="text-xl font-bold bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-transparent dark:from-primary-400 dark:to-primary-300 transition duration-200 hover:scale-105">
                     {{ .Site.Title }}
@@ -15,7 +15,7 @@
             <div class="hidden md:flex items-center space-x-1">
                 {{ $currentPage := . }}
                 {{ range .Site.Menus.main }}
-                <a href="{{ .URL }}" 
+                <a href="{{ .URL | relURL }}"
                    class="nav-link {{ if $currentPage.IsMenuCurrent "main" . }}nav-link-active{{ end }}">
                     {{ .Name }}
                 </a>
@@ -61,7 +61,7 @@
             x-transition:leave-end="opacity-0 -translate-y-4"
             class="md:hidden py-3 space-y-1">
             {{ range .Site.Menus.main }}
-            <a href="{{ .URL }}" 
+            <a href="{{ .URL | relURL }}"
                class="block px-4 py-2 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-50 dark:hover:bg-neutral-800 hover:text-primary-600 dark:hover:text-primary-400 rounded-lg transition-colors duration-200 {{ if $currentPage.IsMenuCurrent "main" . }}text-primary-600 dark:text-primary-400 font-medium bg-neutral-50 dark:bg-neutral-800{{ end }}">
                 {{ .Name }}
             </a>

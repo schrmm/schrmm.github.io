@@ -1,7 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./themes/portfolio-generator/layouts/**/*.html",
+    "./layouts/**/*.html",
+    "./content/**/*.{html,md}",
+    "./themes/**/layouts/**/*.html",
     "./exampleSite/content/**/*.{html,md}",
     "./exampleSite/layouts/**/*.html",
   ],

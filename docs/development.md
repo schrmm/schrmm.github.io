@@ -118,7 +118,6 @@ hugo server --source exampleSite --themesDir ../themes
 ### Production Build
 ```bash
 # Build for production
-npm run build-css
 npm run build
 
 # With environment variables

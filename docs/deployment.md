@@ -21,7 +21,6 @@ on:
 ### Manual Deployment
 ```bash
 # Build site
-npm run build-css
 npm run build
 
 # Deploy using gh-pages branch

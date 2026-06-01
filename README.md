@@ -53,7 +53,6 @@ The site implements a comprehensive design system featuring:
 4. **Production Build**
     ```bash
     # Build CSS and the example site
-    npm run build-css
     npm run build
    ```
 

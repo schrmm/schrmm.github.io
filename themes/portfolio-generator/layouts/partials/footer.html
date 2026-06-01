@@ -50,7 +50,7 @@
                 <ul class="space-y-2">
                     {{ range .Site.Menus.main }}
                     <li>
-                        <a href="{{ .URL }}" class="nav-link inline-flex py-1 px-0">
+                        <a href="{{ .URL | relURL }}" class="nav-link inline-flex py-1 px-0">
                             {{ .Name }}
                         </a>
                     </li>
@@ -62,10 +62,10 @@
             <div class="md:col-span-4">
                 <h3 class="section-title text-lg mb-4">Explore</h3>
                 <div class="grid grid-cols-2 gap-2">
-                    <a href="/projects" class="nav-link inline-flex py-1 px-0">Projects</a>
-                    <a href="/blog" class="nav-link inline-flex py-1 px-0">Blog</a>
-                    <a href="/resume" class="nav-link inline-flex py-1 px-0">Resume</a>
-                    <a href="/contact" class="nav-link inline-flex py-1 px-0">Contact</a>
+                    <a href="{{ "projects/" | relURL }}" class="nav-link inline-flex py-1 px-0">Projects</a>
+                    <a href="{{ "blog/" | relURL }}" class="nav-link inline-flex py-1 px-0">Blog</a>
+                    <a href="{{ "resume/" | relURL }}" class="nav-link inline-flex py-1 px-0">Resume</a>
+                    <a href="{{ "contact/" | relURL }}" class="nav-link inline-flex py-1 px-0">Contact</a>
                 </div>
             </div>
         </div>
