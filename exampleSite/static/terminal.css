@@ -1,38 +1,42 @@
 :root {
-  --background: #001b4d;
-  --foreground: #d8f3ff;
-  --accent: #57c7ff;
-  --first-tone: #8fdcff;
-  --second-tone: #2aa7ff;
-  --font-size: 1.02rem;
-  --line-height: 1.58em;
+  --background: #3f2e97;
+  --foreground: #7869c4;
+  --accent: #a5a0ff;
+  --first-tone: #c5c1ff;
+  --second-tone: #7869c4;
+  --font-size: 1.04rem;
+  --line-height: 1.62em;
   --radius: 0;
 }
 
 body {
   background:
-    radial-gradient(circle at 50% 10%, rgb(87 199 255 / 14%), transparent 36rem),
+    radial-gradient(circle at 50% 10%, rgb(165 160 255 / 10%), transparent 34rem),
     repeating-linear-gradient(
       0deg,
-      rgb(255 255 255 / 3%) 0,
-      rgb(255 255 255 / 3%) 1px,
+      rgb(255 255 255 / 2%) 0,
+      rgb(255 255 255 / 2%) 1px,
       transparent 1px,
       transparent 3px
     ),
     var(--background);
-  text-shadow: 0 0 0.45rem rgb(87 199 255 / 45%);
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  text-shadow: 0 0 0.28rem rgb(165 160 255 / 35%);
+  text-transform: uppercase;
 }
 
 a,
 .logo__text,
 .menu__inner a,
 .post-title a {
-  text-shadow: 0 0 0.65rem rgb(87 199 255 / 70%);
+  text-shadow: 0 0 0.45rem rgb(165 160 255 / 55%);
 }
 
 .container {
-  border-left: 2px solid rgb(87 199 255 / 32%);
-  border-right: 2px solid rgb(87 199 255 / 32%);
+  border-left: 2px solid rgb(120 105 196 / 45%);
+  border-right: 2px solid rgb(120 105 196 / 45%);
 }
 
 .header,
@@ -42,7 +46,7 @@ a,
 .pagination,
 pre {
   border-color: var(--accent);
-  box-shadow: 0 0 1.2rem rgb(87 199 255 / 16%);
+  box-shadow: 0 0 1rem rgb(165 160 255 / 18%);
 }
 
 .logo::after {

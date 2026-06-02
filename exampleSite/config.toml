@@ -62,7 +62,7 @@ pagination.pagerSize = 5
   words = "words"
 
   [params.logo]
-    logoText = "COMMODORE / CHRIS SCHRAMM"
+    logoText = "CHRIS SCHRAMM"
     logoHomeLink = "/"
 
 # Menu
