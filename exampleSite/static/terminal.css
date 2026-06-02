@@ -49,15 +49,6 @@ pre {
   box-shadow: 0 0 1rem rgb(170 170 255 / 16%);
 }
 
-.logo::after {
-  content: 'READY.';
-  display: block;
-  color: var(--foreground);
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  opacity: 0.82;
-}
-
 .post-title::before,
 .index-content h1::before,
 .index-content h2::before,

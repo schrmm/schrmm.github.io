@@ -3,7 +3,7 @@ title: 'Blog'
 description:
   'Insights, tutorials, and updates from my journey in software development'
 date: 2024-04-03
-author: 'Chris Schramm'
+author: 'Christian Schramm'
 layout: 'list'
 ---
 

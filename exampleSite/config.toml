@@ -1,6 +1,6 @@
 baseURL = "/"
 locale = "en-US"
-title = "Chris Schramm - Portfolio"
+title = "Christian Schramm - Portfolio"
 enableRobotsTXT = true
 enableGitInfo = true
 enableEmoji = true
@@ -17,9 +17,9 @@ pagination.pagerSize = 5
 
 # Site parameters
 [params]
-  subtitle = "Personal portfolio and blog of Chris Schramm - Software Developer and Tech Enthusiast"
-  description = "Personal portfolio and blog of Chris Schramm - Software Developer and Tech Enthusiast"
-  author = "Chris Schramm"
+  subtitle = "Personal portfolio and blog of Christian Schramm - Software Developer and Tech Enthusiast"
+  description = "Personal portfolio and blog of Christian Schramm - Software Developer and Tech Enthusiast"
+  author = "Christian Schramm"
   email = "contact@chrisschramm.dev" # Updated from example.com
   github = "https://github.com/schrmm"
   linkedin = "https://linkedin.com/in/chrisschramm"
@@ -62,7 +62,7 @@ pagination.pagerSize = 5
   words = "words"
 
   [params.logo]
-    logoText = "CHRIS SCHRAMM"
+    logoText = "CHRISTIAN SCHRAMM"
     logoHomeLink = "/"
 
 # Menu

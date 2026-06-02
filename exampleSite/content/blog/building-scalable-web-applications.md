@@ -4,7 +4,7 @@ date: 2024-03-20
 description:
   'Learn the essential principles and best practices for building web
   applications that can scale effectively to handle growing user demands.'
-author: 'Chris Schramm'
+author: 'Christian Schramm'
 categories: ['Web Development', 'Architecture']
 tags: ['scalability', 'performance', 'cloud', 'microservices', 'devops']
 featured_image: ''

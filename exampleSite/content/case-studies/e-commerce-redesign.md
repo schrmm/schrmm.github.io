@@ -4,7 +4,7 @@ date: 2024-03-25
 description:
   'A comprehensive redesign of a major e-commerce platform focused on improving
   user experience and conversion rates.'
-author: 'Chris Schramm'
+author: 'Christian Schramm'
 categories: ['UX Design', 'Frontend Development']
 tags: ['e-commerce', 'conversion optimization', 'user testing']
 featured_image: '/images/case-studies/ecommerce-redesign.jpg'

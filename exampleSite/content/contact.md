@@ -2,7 +2,7 @@
 title: 'Contact Me'
 description:
   "Have a question or want to work together? I'd love to hear from you."
-author: 'Chris Schramm'
+author: 'Christian Schramm'
 date: 2024-04-01
 contact_heading: "Let's Connect"
 contact_intro:

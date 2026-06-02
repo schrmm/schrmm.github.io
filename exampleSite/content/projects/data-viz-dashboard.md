@@ -2,7 +2,7 @@
 title: 'Data Visualization Dashboard'
 description: 'Interactive dashboard for analyzing complex datasets'
 tech_stack: ['React', 'D3.js', 'Python', 'FastAPI', 'PostgreSQL']
-author: 'Chris Schramm'
+author: 'Christian Schramm'
 date: 2024-03-15
 featured: true
 ---

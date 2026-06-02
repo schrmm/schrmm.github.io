@@ -3,7 +3,7 @@ title: 'Case Studies'
 description:
   'Detailed explorations of selected projects and their development process'
 date: 2024-04-03
-author: 'Chris Schramm'
+author: 'Christian Schramm'
 layout: 'list'
 ---
 
